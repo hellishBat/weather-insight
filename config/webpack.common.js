@@ -58,7 +58,7 @@ module.exports = {
       filename: 'index.html',
       inject: 'body',
     }),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.sass', '.scss'],
