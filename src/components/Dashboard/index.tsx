@@ -113,7 +113,7 @@ const Dashboard = () => {
             </HighlightsCard>
           </div>
         </div>
-        <h2 className="mb-4 text-2xl font-medium text-gray-400">Dayly Forecast</h2>
+        {/* <h2 className="mb-4 text-2xl font-medium text-gray-400">Dayly Forecast</h2> */}
       </Container>
     </section>
   )

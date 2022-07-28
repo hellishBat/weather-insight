@@ -1,27 +1,35 @@
-# Webpack Boilerplate (React TS + Tailwind CSS Edition)
+# WeatherInsight - A React Weather App
 
 ## Features
 
-- Supports React + TypeScript
-- React Refresh (HMR) (**Dev mode**)
-- Supports styling with
-  - Tailwind CSS
-  - SASS/SCSS preprocessor
-  - PostCSS preprocessor
-    - Autoprefixer
-- Babel transpiller
-- Source-maps for CSS and JS files (**Dev mode**)
-- Minification of HTML/CSS/JS files (**Prod mode**)
-- Optimization of images with Squoosh (**Prod mode**)
-  - Images can be converted to WEBP format (**Prod mode**)
-- SVGR converts SVG into React components and inserts them as inline SVG into HTML.
-- ESlint and Stylelint
-- Prettier
-- Webpack Bundle Analyzer (**Prod mode**)
-  - An HTML report file will be created in the **reports** folder.
-- Environment variables support (.env)
+- Search weather by city name (Default city is set to Kyiv, Ukraine);
+- For the main weather card a background image is automatically applied with the photo found for the given location on unsplash.com (the image is selected randomly from the first 10 results for the given location);
+- Search by location (WIP, coming soon).
 
-## Scripts
+## Techchnologies Used
+
+- React + TypeScript;
+- Styled with Tailwind CSS;
+- Axios for fetching from API;
+- APIs:
+  - OpenWeather
+  - Unsplash
+
+## Live Demo
+
+[Live Demo](https://weather-insight.vercel.app/)
+
+## Local Usage (On your machine)
+
+### Pre-reqisites (for local usage)
+
+- Clone this repo;
+- You need to get API keys from [Openweather](https://openweathermap.org/) and [Unsplash](https://unsplash.com/developers/);
+- Create .env file in the root folder with corresponding variables:
+  - API_KEY_APPID=your-api-key
+  - API_KEY_UNSPLASH=your-api-key
+
+### Scripts
 
 To install dependencies:
 
@@ -52,3 +60,5 @@ Format code with Prettier:
 ```sh
 yarn run format
 ```
+
+This project uses [Webpack Boilerplate](https://github.com/valentine-samoylov/webpack-react-ts-tw-bp) by Valentine Samoylov.
