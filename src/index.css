@@ -14,9 +14,10 @@
   }
 }
 
-// General
+/* General */
 :root {
   --color-white: #ffffff;
+  --color-black-30: rgba(0, 0, 0, 0.3);
   --color-cyan: cyan;
 }
 
@@ -35,7 +36,6 @@ body {
 
 body {
   font-size: 1rem;
-  line-height: 1.4;
 }
 
 #root {
@@ -86,4 +86,22 @@ svg {
 ::selection {
   background-color: var(--color-cyan);
   color: var(--color-white);
+}
+
+.overlay-30 {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-30);
+    content: '';
+  }
 }

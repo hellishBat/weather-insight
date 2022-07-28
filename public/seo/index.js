@@ -2,8 +2,8 @@
 
 // SEO
 module.exports = {
-  title: 'Webpack Boilerplate (React + SASS Edition)',
-  description: 'Description',
+  title: 'WeatherInsight',
+  description: 'WeatherInsight - the weather forecast in your neighborhood!',
   previewImg: 'assets/og-preview.png',
   url: 'url.com',
 }

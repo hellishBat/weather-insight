@@ -19,6 +19,7 @@
 - Prettier
 - Webpack Bundle Analyzer (**Prod mode**)
   - An HTML report file will be created in the **reports** folder.
+- Environment variables support (.env)
 
 ## Scripts
 
