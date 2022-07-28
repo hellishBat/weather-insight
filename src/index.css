@@ -3,17 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: 'Inter';
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400;
-    src: url('@/assets/fonts/inter-regular.woff2') format('woff2'),
-      url('@/assets/fonts/inter-regular.woff') format('woff');
-  }
-}
-
 /* General */
 :root {
   --color-white: #ffffff;
