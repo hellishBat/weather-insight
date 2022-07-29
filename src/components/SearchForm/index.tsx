@@ -20,18 +20,18 @@ const SearchForm = () => {
 
   return (
     <form
-      className="flex justify-center mb-12 p-8 rounded-xl shadow-md bg-white"
+      className="flex justify-center mb-12 p-8 rounded-xl shadow-md bg-white dark:bg-gray-700"
       onSubmit={handleSubmit}
     >
       <div className="group relative flex gap-4 w-full max-w-lg">
         <input
-          className="peer w-full py-2 pl-9 pr-3 rounded-md border-none bg-slate-100 shadow-inner transition-all focus:bg-slate-200 focus:pl-3"
+          className="peer w-full py-2 pl-9 pr-3 rounded-md border-none bg-slate-100 shadow-inner focus:transition-all focus:bg-slate-200 focus:pl-3 dark:bg-gray-900"
           type="text"
           placeholder="Search for a location"
           onChange={(e) => setLocation(e.target.value)}
           value={location}
         />
-        <SearchIcon className="absolute inset-3 transition-all pointer-events-none peer-focus:-translate-x-3 peer-focus:scale-0 peer-focus:opacity-0" />
+        <SearchIcon className="absolute inset-3  pointer-events-none peer-focus:-translate-x-3 peer-focus:scale-0 peer-focus:opacity-0 peer-focus:transition" />
         {/* <button
           className="py-2 px-3 rounded-md border-none bg-gray-700 text-white font-medium transition-colors md:hover:bg-gray-600 md:hover:shadow-sm"
           onClick={fetchCoordinates}

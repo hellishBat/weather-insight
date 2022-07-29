@@ -4,6 +4,7 @@ module.exports = {
     './src/layouts/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,jsx,ts,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '640px',

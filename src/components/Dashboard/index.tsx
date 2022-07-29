@@ -2,6 +2,7 @@
 import { useContext } from 'react'
 import { WeatherContext } from '@/context/WeatherContext'
 import Container from '@/components/Container'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
 import SearchForm from '@/components/SearchForm'
 import convertTime from '@/utils/convertTime'
 import HighlightsCard from '@/components/HighlightsCard'
@@ -19,8 +20,9 @@ const Dashboard = () => {
   const { weather, img } = useContext(WeatherContext)
 
   return (
-    <section className="min-h-full py-16 bg-slate-100">
+    <section className="min-h-full pb-16">
       <Container>
+        <ThemeSwitcher />
         <SearchForm />
         <h2 className="mb-4 text-2xl font-medium text-gray-400">{`Today's Highlights`}</h2>
         <div className="flex gap-8 flex-wrap mb-12 md:flex-nowrap">

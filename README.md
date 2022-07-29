@@ -4,13 +4,15 @@
 
 - Search weather by city name (Default city is set to Kyiv, Ukraine);
 - For the main weather card a background image is automatically applied with the photo found for the given location on unsplash.com (the image is selected randomly from the first 10 results for the given location);
-- Search by location (WIP, coming soon).
+- Search by location (WIP, coming soon);
+- Dark Mode Included.
 
 ## Techchnologies Used
 
 - React + TypeScript;
 - Styled with Tailwind CSS;
 - Axios for fetching from API;
+- [React Toggle Dark Mode](https://www.npmjs.com/package/react-toggle-dark-mode)
 - APIs:
   - OpenWeather
   - Unsplash

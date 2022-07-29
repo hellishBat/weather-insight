@@ -1,0 +1,19 @@
+{
+  "footer": {
+    "links": {
+      "owner": {
+        "href": "https://valentine-samoylov.vercel.app/",
+        "text": "Valentine Samoylov"
+      },
+      "weather": {
+        "href": "https://openweathermap.org/",
+        "text": "OpenWeather"
+      },
+      "unsplash": {
+        "href": "https://unsplash.com/",
+        "text": "Unsplash"
+      }
+    },
+    "text": ["Coded with ❤️", "using", "and", "APIs"]
+  }
+}

@@ -8,7 +8,9 @@ const Layout: FC<ChildrenTypes> = ({ children }) => {
   return (
     <>
       {/* <Header /> */}
-      <main className="text-gray-700 bg-slate-100">{children}</main>
+      <main className="bg-slate-100 text-gray-700 dark:bg-gray-900 dark:text-white">
+        {children}
+      </main>
       <Footer />
     </>
   )

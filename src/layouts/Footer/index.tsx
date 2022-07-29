@@ -1,30 +1,23 @@
 // Footer
 import Container from '@/components/Container'
+import Link from '@/components/Link'
+import data from '@/data/index.json'
+
+const footerLinks = data.footer.links
+const footerText = data.footer.text
 
 const Footer = () => {
   return (
-    <footer className="py-8">
+    <footer className="py-8 text-gray-700 dark:bg-gray-700 dark:text-white">
       <Container>
-        <div className="flex flex-wrap justify-center gap-1 text-gray-900">
-          <span>Coded with ❤️ by</span>
-          <a
-            className="font-medium transition-all hover:underline"
-            href="https://valentine-samoylov.vercel.app/"
-          >
-            Valentine Samoylov
-          </a>
-          <span>using</span>
-          <a
-            className="font-medium transition-all hover:underline"
-            href="https://openweathermap.org/"
-          >
-            OpenWeather
-          </a>
-          <span> and </span>
-          <a className="font-medium transition-all hover:underline" href="https://unsplash.com/">
-            Unsplash
-          </a>
-          <span>APIs.</span>
+        <div className="flex flex-wrap justify-center gap-1">
+          <span>{footerText[0]}</span>
+          <Link href={footerLinks.owner.href}>{footerLinks.owner.text}</Link>
+          <span>{footerText[1]}</span>
+          <Link href={footerLinks.weather.href}>{footerLinks.weather.text}</Link>
+          <span>{footerText[2]}</span>
+          <Link href={footerLinks.unsplash.href}>{footerLinks.unsplash.text}</Link>
+          <span>{footerText[3]}</span>
         </div>
       </Container>
     </footer>
