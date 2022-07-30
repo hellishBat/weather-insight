@@ -22,9 +22,7 @@ module.exports = {
       colors: {
         // custom colors
       },
-      fontFamily: {
-        // custom fonts
-      },
+      // fontFamily: { sans: ['Inter', 'sans-serif'] },
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],

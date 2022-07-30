@@ -27,7 +27,7 @@ const Dashboard = () => {
         <h2 className="mb-4 text-2xl font-medium text-gray-400">{`Today's Highlights`}</h2>
         <div className="flex gap-8 flex-wrap mb-12 md:flex-nowrap">
           <article
-            className="flex flex-col w-full lg:w-4/12 rounded-xl shadow-md p-6 bg-center bg-no-repeat bg-cover overlay-30 text-white aspect-square"
+            className="flex flex-col w-full lg:w-4/12 rounded-xl shadow-md p-6 bg-center bg-no-repeat bg-cover overlay-30 text-white aspect-square overflow-hidden"
             style={{ backgroundImage: `url(${img})` }}
           >
             <div className="mb-2 text-3xl font-medium">{weather?.name}</div>

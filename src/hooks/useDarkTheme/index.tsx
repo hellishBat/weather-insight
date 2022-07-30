@@ -1,11 +1,6 @@
 // useDarkTheme
 import { useState, useEffect } from 'react'
 
-interface IDarkTheme {
-  theme: any
-  setTheme: any
-}
-
 const useDarkTheme = () => {
   const [theme, setTheme] = useState(localStorage.theme)
   const colorTheme = theme === 'dark' ? 'light' : 'dark'

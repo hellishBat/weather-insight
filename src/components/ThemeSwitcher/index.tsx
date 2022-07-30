@@ -7,24 +7,22 @@ const ThemeSwitcher = () => {
   const [colorTheme, setTheme] = useDarkTheme()
   const [darkMode, setDarkMode] = useState(colorTheme === 'light' ? true : false)
 
-  const toggleDarkMode = (checked) => {
+  const toggleDarkMode = (checked: boolean | ((prevState: boolean) => boolean)) => {
     setTheme(colorTheme)
     setDarkMode(checked)
   }
 
   return (
-    <>
-      <div className="flex justify-end py-8">
-        <div className="p-2 rounded-md shadow-md bg-white dark:bg-slate-700">
-          <DarkModeSwitch
-            checked={darkMode}
-            onChange={toggleDarkMode}
-            size={32}
-            sunColor="rgb(55 65 81)"
-          />
-        </div>
+    <div className="flex justify-end py-8">
+      <div className="p-2 rounded-md shadow-md bg-white border border-white/5 dark:bg-slate-800 ">
+        <DarkModeSwitch
+          checked={darkMode}
+          onChange={toggleDarkMode}
+          size={32}
+          sunColor="rgb(55 65 81)"
+        />
       </div>
-    </>
+    </div>
   )
 }
 

@@ -20,7 +20,7 @@ const SearchForm = () => {
 
   return (
     <form
-      className="flex justify-center mb-12 p-8 rounded-xl shadow-md bg-white dark:bg-gray-700"
+      className="flex justify-center mb-12 p-8 rounded-xl shadow-md bg-white border border-white/5 dark:bg-slate-800"
       onSubmit={handleSubmit}
     >
       <div className="group relative flex gap-4 w-full max-w-lg">
