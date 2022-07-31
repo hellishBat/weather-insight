@@ -1,7 +1,11 @@
 // WeatherContext
 import { createContext, ReactNode, useState } from 'react'
 
-interface IWeatherContext {
+interface IThemeContextProps {
+  children: ReactNode
+}
+
+type WeatherContextData = {
   location: string
   setLocation: (fn: string) => void
   weather: string | any
@@ -10,9 +14,9 @@ interface IWeatherContext {
   setImg: (fn: string) => void | any
 }
 
-export const WeatherContext = createContext({} as IWeatherContext)
+export const WeatherContext = createContext({} as WeatherContextData)
 
-const WeatherProvider = ({ children }: { children: ReactNode }) => {
+export const WeatherProvider = ({ children }: IThemeContextProps) => {
   const [location, setLocation] = useState('')
   const [weather, setWeather] = useState('')
   const [img, setImg] = useState('')
@@ -28,5 +32,3 @@ const WeatherProvider = ({ children }: { children: ReactNode }) => {
 
   return <WeatherContext.Provider value={weatherValue}>{children}</WeatherContext.Provider>
 }
-
-export default WeatherProvider
