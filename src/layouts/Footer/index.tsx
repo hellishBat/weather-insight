@@ -8,7 +8,7 @@ const footerText = data.footer.text
 
 const Footer = () => {
   return (
-    <footer className="py-8 text-gray-700 dark:bg-slate-800 dark:text-white">
+    <footer className="py-8 text-xs text-gray-500 dark:bg-slate-800 dark:text-gray-400">
       <Container>
         <div className="flex flex-wrap justify-center gap-1">
           <span>{footerText[0]}</span>

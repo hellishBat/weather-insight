@@ -3,18 +3,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
 @layer base {
   @font-face {
-    font-family: 'Inter';
-    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 100;
+    src: local(''), url('@/assets/fonts/raleway-100.woff2') format('woff2'),
+      url('@/assets/fonts/raleway-100.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
-    src: url('@/assets/fonts/Inter-Regular.woff2') format('woff2'),
-      url('@/assets/fonts/Inter-Regular.woff') format('woff');
+    src: local(''), url('@/assets/fonts/raleway-400.woff2') format('woff2'),
+      url('@/assets/fonts/raleway-400.woff');
+  }
+
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''), url('@/assets/fonts/raleway-600.woff2') format('woff2'),
+      url('@/assets/fonts/raleway-600.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''), url('@/assets/fonts/raleway-700.woff2') format('woff2'),
+      url('@/assets/fonts/raleway-700.woff') format('woff');
   }
 }
-*/
 
 /* General */
 :root {

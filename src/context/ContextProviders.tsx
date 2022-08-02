@@ -1,8 +1,8 @@
 // ContextProviders
 import { FC } from 'react'
-import { ChildrenTypes } from '@/types'
-import { WeatherProvider } from '@/context/WeatherContext'
 import { ThemeProvider } from '@/context/ThemeContext'
+import { WeatherProvider } from '@/context/WeatherContext'
+import { ChildrenTypes } from '@/types'
 
 const ContextProviders: FC<ChildrenTypes> = ({ children }) => {
   return (

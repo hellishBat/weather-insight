@@ -2,20 +2,29 @@
 import { useContext } from 'react'
 import { WeatherContext } from '@/context/WeatherContext'
 import useWeatherFetch from '@/hooks/useWeatherFetch'
+import useCoordinates from '@/hooks/useCoordinates'
+
 import useImgFetch from '@/hooks/useImgFetch'
 import SearchIcon from '@/assets/images/svg/search.svg'
-// import LocationIcon from '@/assets/images/svg/location.svg'
+import LocationIcon from '@/assets/images/svg/location.svg'
 
 const SearchForm = () => {
-  const { location, setLocation } = useContext(WeatherContext)
-  const [searchLocByLocation] = useWeatherFetch()
+  const { weather, location, setLocation, lat, lon } = useContext(WeatherContext)
+  const [searchWeatherByWord, searchWeatherByLocation] = useWeatherFetch()
   const { searchImgByIWord } = useImgFetch()
+  const [findCoordinates] = useCoordinates()
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setLocation('')
-    searchLocByLocation(location)
+    searchWeatherByWord(location)
     searchImgByIWord(location)
+  }
+
+  const fetchCoordinates = () => {
+    setLocation('')
+    findCoordinates(searchWeatherByLocation(lat, lon))
+    searchImgByIWord(weather.name)
   }
 
   return (
@@ -32,13 +41,13 @@ const SearchForm = () => {
           value={location}
         />
         <SearchIcon className="absolute inset-3  pointer-events-none peer-focus:-translate-x-3 peer-focus:scale-0 peer-focus:opacity-0 peer-focus:transition" />
-        {/* <button
-          className="py-2 px-3 rounded-md border-none bg-gray-700 text-white font-medium transition-colors md:hover:bg-gray-600 md:hover:shadow-sm"
+        <button
+          className="py-2 px-3 rounded-md bg-slate-700 border border-white/5 font-medium text-white hover:transition-colors  md:hover:shadow-sm md:hover:bg-slate-600 md:hover:dark:bg-slate-600"
           onClick={fetchCoordinates}
           type="button"
         >
           <LocationIcon />
-        </button> */}
+        </button>
       </div>
     </form>
   )
