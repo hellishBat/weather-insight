@@ -1,11 +1,17 @@
 // Dashboard
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { WeatherContext } from '@/context/WeatherContext'
+import useWeatherFetch from '@/hooks/useWeatherFetch'
+import useCoordinates from '@/hooks/useCoordinates'
+import useImgFetch from '@/hooks/useImgFetch'
 import Container from '@/components/Container'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import SearchForm from '@/components/SearchForm'
-import convertTime from '@/utils/convertTime'
+import LocationButton from '@/components/LocationButton'
 import HighlightsCard from '@/components/HighlightsCard'
+import Forecast from '@/components/Forecast'
+// import convertRegionNames from '@/utils/convertRegionNames'
+import { timeToHrsMins } from '@/utils/convertTime'
 import TempMinIcon from '@/assets/images/svg/temperature-low.svg'
 import TempMaxIcon from '@/assets/images/svg/temperature-high.svg'
 import CloudIcon from '@/assets/images/svg/cloud.svg'
@@ -17,12 +23,38 @@ import GaugeIcon from '@/assets/images/svg/gauge.svg'
 import EyeIcon from '@/assets/images/svg/eye.svg'
 
 const Dashboard = () => {
-  const { weather, img } = useContext(WeatherContext)
+  const [isWeekMode, setWeekMode] = useState(false)
+  const { weather, bgImg, searchTerm, setSearchTerm, coords } = useContext(WeatherContext)
+  const [findCoordinates] = useCoordinates()
+  const [searchWeatherByWord, searchWeatherByCoords] = useWeatherFetch()
+  const { searchImgByWord } = useImgFetch()
+
+  const fetchCoordinates = () => {
+    setSearchTerm('')
+    findCoordinates()
+    searchWeatherByCoords(coords.lat, coords.lng)
+    searchImgByWord(weather.name)
+  }
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+    setSearchTerm('')
+    searchWeatherByWord(searchTerm)
+    searchImgByWord(searchTerm)
+  }
+
+  const showWeekForecast = () => {
+    setWeekMode(true)
+  }
+
+  const showTodayForecast = () => {
+    setWeekMode(false)
+  }
 
   return (
     <div
       className=" bg-center bg-no-repeat bg-cover dark:bg-gray-900 "
-      style={{ backgroundImage: `url(${img})` }}
+      style={{ backgroundImage: `url(${bgImg})` }}
     >
       <div className="min-h-full pb-16 bg-slate-200/70 dark:bg-gray-900/90 backdrop-blur-md">
         <Container>
@@ -30,16 +62,20 @@ const Dashboard = () => {
             <ThemeSwitcher />
           </div>
 
-          <SearchForm />
+          <div className="flex justify-center gap-4 mb-12 p-6 md:p-8 rounded-xl shadow-md bg-white border border-white/5 dark:bg-slate-800">
+            <SearchForm submitHandler={handleSubmit} search={searchTerm} />
+            <LocationButton clickHandler={fetchCoordinates} />
+          </div>
 
           <section>
             <h2 className="mb-4 text-3xl font-bold text-gray-500">{`Today's Highlights`}</h2>
             <div className="flex gap-8 flex-wrap mb-12 md:flex-nowrap">
               <article
                 className="flex flex-col w-full lg:w-4/12 rounded-xl shadow-md p-6 bg-center bg-no-repeat bg-cover overlay-30 text-white aspect-square overflow-hidden"
-                style={{ backgroundImage: `url(${img})` }}
+                style={{ backgroundImage: `url(${bgImg})` }}
               >
-                <div className="mb-2 text-3xl font-semibold">{weather?.name}</div>
+                <div className="mb-2 text-3xl font-semibold">{`${weather?.city}, 
+                ${weather?.country}`}</div>
                 <div className="mb-auto">
                   <div className="flex items-center mb-4 text-5xl font-thin">
                     <img
@@ -75,11 +111,11 @@ const Dashboard = () => {
                   <h3 className="mb-2 text-2xl font-semibold text-gray-400">Sunrise & Sunset</h3>
                   <div className="flex items-center gap-2 text-xl">
                     <SunriseIcon />
-                    <span>{convertTime(weather?.sys?.sunrise)}</span>
+                    <span>{timeToHrsMins(weather?.sys?.sunrise)}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xl">
                     <SunsetIcon />
-                    <span>{convertTime(weather?.sys?.sunset)}</span>
+                    <span>{timeToHrsMins(weather?.sys?.sunset)}</span>
                   </div>
                 </HighlightsCard>
 
@@ -127,7 +163,30 @@ const Dashboard = () => {
           </section>
 
           <section>
-            <h2 className="mb-4 text-3xl font-bold text-gray-500">Daily Forecast</h2>
+            <h2 className="flex gap-4 mb-4 text-3xl font-bold text-gray-500">
+              <button
+                className={`p-0 ${
+                  isWeekMode ? '' : 'underline'
+                } transition-colors md:hover:text-gray-600 dark:md:hover:text-gray-400`}
+                type="button"
+                onClick={showTodayForecast}
+              >
+                Today
+              </button>
+              <button
+                className={`p-0 ${
+                  isWeekMode ? 'underline' : ''
+                } transition-colors md:hover:text-gray-600 dark:md:hover:text-gray-400`}
+                type="button"
+                onClick={showWeekForecast}
+              >
+                Week
+              </button>
+            </h2>
+            <Forecast
+              data={isWeekMode ? weather?.daily : weather?.hourly}
+              isWeekMode={isWeekMode}
+            />
           </section>
         </Container>
       </div>

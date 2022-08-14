@@ -6,39 +6,37 @@ interface IWeatherContextProps {
 }
 
 type WeatherContextData = {
-  location: string
-  setLocation: (fn: string) => void
-  lat: string
-  setLat: (fn: string) => void
-  lon: string
-  setLon: (fn: string) => void
-  weather: string | any
+  coords: { lat: string; lng: string } | any
+  setCoords: (fn: any) => void
+  searchTerm: string
+  setSearchTerm: (fn: string) => void
+  weather: any
   setWeather: (fn: string | any) => void | any
-  img: string
-  setImg: (fn: string) => void | any
+  bgImg: string
+  setBgImg: (fn: string) => void | any
 }
 
-export const WeatherContext = createContext({} as WeatherContextData)
+const WeatherContext = createContext({} as WeatherContextData)
 
-export const WeatherProvider = ({ children }: IWeatherContextProps) => {
-  const [location, setLocation] = useState('')
-  const [lat, setLat] = useState('')
-  const [lon, setLon] = useState('')
-  const [weather, setWeather] = useState('')
-  const [img, setImg] = useState('')
+const WeatherProvider = ({ children }: IWeatherContextProps) => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const [coords, setCoords] = useState({ lat: '', lng: '' })
+
+  const [weather, setWeather] = useState({})
+  const [bgImg, setBgImg] = useState('')
 
   const weatherValue = {
-    location,
-    setLocation,
-    lat,
-    setLat,
-    lon,
-    setLon,
+    coords,
+    setCoords,
+    searchTerm,
+    setSearchTerm,
     weather,
     setWeather,
-    img,
-    setImg,
+    bgImg,
+    setBgImg,
   }
 
   return <WeatherContext.Provider value={weatherValue}>{children}</WeatherContext.Provider>
 }
+
+export { WeatherContext, WeatherProvider }

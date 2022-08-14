@@ -3,19 +3,19 @@ import { useContext } from 'react'
 import { WeatherContext } from '@/context/WeatherContext'
 
 const useCoordinates = () => {
-  const { setLat, setLon } = useContext(WeatherContext)
+  const { coords, setCoords } = useContext(WeatherContext)
 
   const findCoordinates = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(position)
-          setLat(position?.coords?.latitude)
-          setLon(position?.coords?.longitude)
+          setCoords({ lat: position.coords.latitude, lng: position.coords.longitude })
+          // console.log(position)
+          console.log(coords)
         },
         (positionError) => {
-          setLat('50.4501')
-          setLon('30.5234')
+          alert('An error occurred: ' + positionError)
+          setCoords({ lat: '50.4501', lng: '30.5234' })
           console.log(positionError)
         }
       )
@@ -23,6 +23,11 @@ const useCoordinates = () => {
       console.log("It's not supported by this browser.")
     }
   }
+
+  // const updateLocation = (lat: any, lng: any) => {
+  //   setCoords({ lat: lat, lng: lng })
+  //   //console.log('Updated Location')
+  // }
 
   return [findCoordinates]
 }

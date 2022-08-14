@@ -1,36 +1,31 @@
 // useImgFetch
 import { useContext, useEffect } from 'react'
-import axios from 'axios'
+import fetchData from '@/utils/fetchData'
 import { SEARCH_BY_WORD, SEARCH_DEFAULT } from '@/api/imgApi'
 import { WeatherContext } from '@/context/WeatherContext'
 
 const useImgFetch = () => {
-  const { setImg } = useContext(WeatherContext)
+  const { weather, setBgImg } = useContext(WeatherContext)
 
-  const fetchImg = async (endpoint: string) => {
-    try {
-      const req = axios.get(endpoint)
-      return await req
-    } catch (err) {
-      console.log(err)
-    }
-  }
+  const searchImgByWord = (word: string) => {
+    fetchData(`${SEARCH_BY_WORD}${word}`).then((res) => {
+      setBgImg(res?.data.results[Math.floor(Math.random() * 10)]?.urls?.regular)
 
-  const searchImgByIWord = (word: string) => {
-    fetchImg(`${SEARCH_BY_WORD}${word}`).then((res) => {
-      setImg(res?.data.results[Math.floor(Math.random() * 10)]?.urls?.regular)
-      // console.log(res)
+      if (res?.data.results.length === 0 || res?.data.results.length < 10) {
+        fetchData(`${SEARCH_BY_WORD}${weather?.weather?.[0]?.description}`).then((res) => {
+          setBgImg(res?.data.results[Math.floor(Math.random() * 10)]?.urls?.regular)
+        })
+      }
     })
   }
 
   useEffect(() => {
-    fetchImg(`${SEARCH_DEFAULT}`).then((res) => {
-      setImg(res?.data.results[Math.floor(Math.random() * 10)]?.urls?.regular)
-      // console.log(res)
+    fetchData(`${SEARCH_DEFAULT}`).then((res) => {
+      setBgImg(res?.data.results[Math.floor(Math.random() * 10)]?.urls?.regular)
     })
-  }, [setImg])
+  }, [setBgImg])
 
-  return { searchImgByIWord }
+  return { searchImgByWord }
 }
 
 export default useImgFetch
