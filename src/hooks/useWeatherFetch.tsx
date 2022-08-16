@@ -11,12 +11,13 @@ import {
 import { WeatherContext } from '@/context/WeatherContext'
 
 const useWeatherFetch = () => {
-  const { setWeather } = useContext(WeatherContext)
+  const { setWeather, setError } = useContext(WeatherContext)
 
   const searchWeatherByWord = (location: string) => {
     fetchData(`${API_URL_APPID}?q=${location}&appid=${API_APPID}&units=metric`).then((res: any) => {
       if (res?.status === 200) {
         setWeather({ ...res?.data, city: res?.data?.name, country: res?.data?.sys?.country })
+        setError(false)
 
         fetchData(
           `${GET_NEXT_DAYS_HOURS}&lat=${res.data.coord.lat}&lon=${res.data.coord.lon}&units=metric`
@@ -28,12 +29,16 @@ const useWeatherFetch = () => {
             current: res?.data?.current,
           }))
         })
+      } else {
+        setError(true)
+        console.log('error is set!')
       }
     })
   }
 
   const searchWeatherByCoordinates = (lat: any, lng: any) => {
     if (lat && lng) {
+      setError(false)
       fetchData(`${SEARCH_BY_LOCATION}&lat=${lat}&lon=${lng}&units=metric`).then((res: any) => {
         setWeather({ ...res?.data, city: res?.data?.name, country: res?.data?.sys?.country })
       })

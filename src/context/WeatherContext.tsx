@@ -14,6 +14,8 @@ type WeatherContextData = {
   setWeather: (fn: string | any) => void | any
   bgImg: string
   setBgImg: (fn: string) => void | any
+  error: boolean
+  setError: (fn: boolean) => void
 }
 
 const WeatherContext = createContext({} as WeatherContextData)
@@ -21,9 +23,9 @@ const WeatherContext = createContext({} as WeatherContextData)
 const WeatherProvider = ({ children }: IWeatherContextProps) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [coords, setCoords] = useState({ lat: '', lng: '' })
-
   const [weather, setWeather] = useState({})
   const [bgImg, setBgImg] = useState('')
+  const [error, setError] = useState(false)
 
   const weatherValue = {
     coords,
@@ -34,6 +36,8 @@ const WeatherProvider = ({ children }: IWeatherContextProps) => {
     setWeather,
     bgImg,
     setBgImg,
+    error,
+    setError,
   }
 
   return <WeatherContext.Provider value={weatherValue}>{children}</WeatherContext.Provider>
