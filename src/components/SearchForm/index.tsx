@@ -1,15 +1,9 @@
 // SearchForm
 import { FC } from 'react'
+import { SearchFormTypes } from '@/types'
 import SearchIcon from '@/assets/images/svg/search.svg'
 
-type FunctionTypes = {
-  submitHandler: (e: { preventDefault: () => void }) => void
-  inputChangeHandler: (e: { target: { value: string } }) => void
-  search: string
-  error: boolean
-}
-
-const SearchForm: FC<FunctionTypes> = ({ submitHandler, inputChangeHandler, search, error }) => {
+const SearchForm: FC<SearchFormTypes> = ({ submitHandler, inputChangeHandler, search, error }) => {
   return (
     <form className={'group relative flex w-full max-w-lg'} onSubmit={submitHandler}>
       <input

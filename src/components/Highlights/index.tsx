@@ -1,6 +1,8 @@
 // Highlights
+import { FC } from 'react'
 import HighlightsCard from '@/components/HighlightsCard'
 import { timeToHrsMins } from '@/utils/convertTime'
+import { HighlightsTypes } from '@/types'
 import TempMinIcon from '@/assets/images/svg/temperature-low.svg'
 import TempMaxIcon from '@/assets/images/svg/temperature-high.svg'
 import CloudIcon from '@/assets/images/svg/cloud.svg'
@@ -11,7 +13,7 @@ import WindIcon from '@/assets/images/svg/wind.svg'
 import GaugeIcon from '@/assets/images/svg/gauge.svg'
 import EyeIcon from '@/assets/images/svg/eye.svg'
 
-const Highlights = ({ data, img }: { data: any; img: string }) => {
+const Highlights: FC<HighlightsTypes> = ({ data, img }) => {
   return (
     <div className="flex gap-8 flex-wrap mb-12 md:flex-nowrap">
       <article
@@ -24,7 +26,7 @@ const Highlights = ({ data, img }: { data: any; img: string }) => {
           <div className="flex items-center mb-4 text-5xl font-thin">
             <img
               className="w-[1em] h-[1em] object-contain"
-              src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}.png`}
+              src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
               alt={data?.weather?.[0]?.main}
             ></img>
             <span>{`${data?.main?.temp.toFixed(0)}°C`}</span>

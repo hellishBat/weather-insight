@@ -1,7 +1,9 @@
 // ForecastCard
+import { FC } from 'react'
 import { timeToWeekDay, timeToHrsMins } from '@/utils/convertTime'
+import { ForecastTypes } from '@/types'
 
-const ForecastCard = ({ data, isWeekMode }: { data: any; isWeekMode: boolean }) => {
+const ForecastCard: FC<ForecastTypes> = ({ data, isWeekMode }) => {
   return (
     <article className="flex justify-center rounded-xl px-4 py-8 bg-white border border-white/5 shadow-md text-center dark:bg-slate-800">
       <div className="flex flex-col justify-center items-center">
@@ -10,7 +12,7 @@ const ForecastCard = ({ data, isWeekMode }: { data: any; isWeekMode: boolean }) 
         </h3>
         <img
           className="w-24 h-w-24 object-contain"
-          src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}.png`}
+          src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
           alt={data?.weather?.[0]?.main}
         ></img>
         <p className="flex flex-col items-center text-2xl">

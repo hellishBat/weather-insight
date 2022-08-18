@@ -1,10 +1,6 @@
 // Link
-import { FC, ReactNode } from 'react'
-
-type LinkTypes = {
-  href: string
-  children: ReactNode
-}
+import { FC } from 'react'
+import { LinkTypes } from '@/types'
 
 const Link: FC<LinkTypes> = ({ href, children }) => {
   return (
