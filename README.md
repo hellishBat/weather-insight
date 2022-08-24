@@ -12,6 +12,7 @@
 - React + TypeScript;
 - Styled with Tailwind CSS;
 - Axios for fetching from API;
+- Moment.js to handle time formats;
 - [React Toggle Dark Mode](https://www.npmjs.com/package/react-toggle-dark-mode)
 - APIs:
   - OpenWeather

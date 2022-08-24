@@ -1,8 +1,8 @@
 // useImgFetch
 import { useContext, useEffect } from 'react'
-import fetchData from '@/utils/fetchData'
-import { SEARCH_BY_WORD, SEARCH_DEFAULT } from '@/api/imgApi'
 import { WeatherContext } from '@/context/WeatherContext'
+import { SEARCH_BY_WORD, SEARCH_DEFAULT } from '@/api/imgApi'
+import fetchData from '@/utils/fetchData'
 
 const useImgFetch = () => {
   const { weather, setBgImg } = useContext(WeatherContext)

@@ -2,7 +2,6 @@
 import { FC } from 'react'
 import { ReactCountryFlag } from 'react-country-flag'
 import { HighlightsTypes } from '@/types'
-import convertRegionNames from '@/utils/convertRegionNames'
 
 const MainHighlightsCard: FC<HighlightsTypes> = ({ data, img }) => {
   return (
@@ -33,8 +32,8 @@ const MainHighlightsCard: FC<HighlightsTypes> = ({ data, img }) => {
           <span>{`${data?.city}`}</span>
         </h3>
         <p className="flex items-center gap-2">
-          <ReactCountryFlag countryCode={data?.country} svg aria-label={data?.country} />
-          <span>{`${convertRegionNames(data?.country)}`}</span>
+          <ReactCountryFlag countryCode={data?.country_code} svg aria-label={data?.country} />
+          <span>{`${data?.country}`}</span>
         </p>
       </div>
     </article>
