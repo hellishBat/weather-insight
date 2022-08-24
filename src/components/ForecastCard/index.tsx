@@ -1,14 +1,14 @@
 // ForecastCard
 import { FC } from 'react'
-import { timeToWeekDay, timeToHrsMins } from '@/utils/convertTime'
+import { unixTimeToHrsMins, unixTimeToWeekDay } from '@/utils/convertTime'
 import { ForecastTypes } from '@/types'
 
-const ForecastCard: FC<ForecastTypes> = ({ data, isWeekMode }) => {
+const ForecastCard: FC<ForecastTypes> = ({ data, isWeekMode, timezone }) => {
   return (
     <article className="flex justify-center rounded-xl px-4 py-8 bg-white border border-white/5 shadow-md text-center dark:bg-slate-800">
       <div className="flex flex-col justify-center items-center">
         <h3 className="text-2xl font-semibold text-gray-400">
-          {isWeekMode ? timeToWeekDay(data.dt) : timeToHrsMins(data.dt)}
+          {isWeekMode ? unixTimeToWeekDay(data.dt, timezone) : unixTimeToHrsMins(data.dt, timezone)}
         </h3>
         <img
           className="w-24 h-w-24 object-contain"

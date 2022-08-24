@@ -1,14 +1,18 @@
 // convertTime
-const timeToHrsMins = (unixTime: number) => {
-  return new Date(unixTime * 1000).toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: false,
-  })
+import moment from 'moment'
+
+const unixTimeToHrsMins = (unixTime: number, unixTimezoneOffset: number) => {
+  return moment
+    .unix(unixTime + unixTimezoneOffset)
+    .utc()
+    .format('HH:mm')
 }
 
-const timeToWeekDay = (unixTime: number) => {
-  return new Date(unixTime * 1000).toLocaleString('en-US', { weekday: 'short' })
+const unixTimeToWeekDay = (unixTime: number, unixTimezoneOffset: number) => {
+  return moment
+    .unix(unixTime + unixTimezoneOffset)
+    .utc()
+    .format('ddd')
 }
 
-export { timeToHrsMins, timeToWeekDay }
+export { unixTimeToHrsMins, unixTimeToWeekDay }

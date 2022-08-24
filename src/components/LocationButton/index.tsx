@@ -1,7 +1,7 @@
 // LocationButton
 import { FC } from 'react'
 import { LocationButtonTypes } from '@/types'
-import LocationIcon from '@/assets/images/svg/location.svg'
+import { LocationIcon } from '@/assets'
 
 const LocationButton: FC<LocationButtonTypes> = ({ clickHandler }) => {
   return (

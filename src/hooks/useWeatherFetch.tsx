@@ -11,7 +11,7 @@ import {
 import { WeatherContext } from '@/context/WeatherContext'
 
 const useWeatherFetch = () => {
-  const { setWeather, setError } = useContext(WeatherContext)
+  const { setWeather, setError, weather } = useContext(WeatherContext)
 
   const searchWeatherByWord = (location: string) => {
     fetchData(`${API_URL_APPID}?q=${location}&appid=${API_APPID}&units=metric`).then((res: any) => {
@@ -34,6 +34,8 @@ const useWeatherFetch = () => {
         console.log('error is set!')
       }
     })
+    console.log(weather)
+    console.log(weather.timezone)
   }
 
   const searchWeatherByCoordinates = (lat: any, lng: any) => {

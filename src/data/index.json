@@ -1,4 +1,10 @@
 {
+  "highlights": {
+    "heading": "Today's Highlights"
+  },
+  "forecast": {
+    "heading": ["Today", "Week"]
+  },
   "footer": {
     "links": {
       "owner": {

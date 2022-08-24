@@ -23,6 +23,7 @@ type HighlightsTypes = {
 
 type ForecastTypes = {
   data: any
+  timezone: any
   isWeekMode: boolean
 }
 

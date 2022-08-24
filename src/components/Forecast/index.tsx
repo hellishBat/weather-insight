@@ -8,7 +8,7 @@ import 'swiper/scss/keyboard'
 import ForecastCard from '@/components/ForecastCard'
 import { ForecastTypes } from '@/types'
 
-const Forecast: FC<ForecastTypes> = ({ data, isWeekMode }) => {
+const Forecast: FC<ForecastTypes> = ({ data, isWeekMode, timezone }) => {
   return (
     <Swiper
       className="-my-8"
@@ -27,7 +27,7 @@ const Forecast: FC<ForecastTypes> = ({ data, isWeekMode }) => {
       {data &&
         data.map((forecastItem: any, idx: Key | undefined) => (
           <SwiperSlide className="py-8" key={idx}>
-            <ForecastCard data={forecastItem} isWeekMode={isWeekMode} />
+            <ForecastCard data={forecastItem} isWeekMode={isWeekMode} timezone={timezone} />
           </SwiperSlide>
         ))}
     </Swiper>

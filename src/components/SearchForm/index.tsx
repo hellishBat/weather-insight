@@ -1,7 +1,7 @@
 // SearchForm
 import { FC } from 'react'
 import { SearchFormTypes } from '@/types'
-import SearchIcon from '@/assets/images/svg/search.svg'
+import { SearchIcon } from '@/assets'
 
 const SearchForm: FC<SearchFormTypes> = ({ submitHandler, inputChangeHandler, search, error }) => {
   return (
