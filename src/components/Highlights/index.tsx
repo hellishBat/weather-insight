@@ -2,75 +2,56 @@
 import { FC } from 'react'
 import MainHighlightsCard from '@/components/MainHighlightsCard'
 import HighlightsCard from '@/components/HighlightsCard'
-import { unixTimeToHrsMins } from '@/utils/convertTime'
 import { HighlightsTypes } from '@/types'
-import {
-  CloudIcon,
-  SunriseIcon,
-  SunsetIcon,
-  DropletIcon,
-  WindIcon,
-  GaugeIcon,
-  EyeIcon,
-} from '@/assets'
+import { SunIcon, CloudIcon, WaterIcon, WindIcon, MeterIcon, VisibilityIcon } from '@/assets'
 
 const Highlights: FC<HighlightsTypes> = ({ data, img }) => {
+  const highlightsData = [
+    {
+      label: 'UV Index',
+      icon: <SunIcon />,
+      value: data?.current?.uvi,
+      unit: '',
+    },
+    {
+      label: 'Cloudiness',
+      icon: <CloudIcon />,
+      value: data?.current?.clouds,
+      unit: '%',
+    },
+    {
+      label: 'Wind Status',
+      icon: <WindIcon />,
+      value: data?.current?.wind_speed,
+      unit: 'm/s',
+    },
+    {
+      label: 'Pressure',
+      icon: <MeterIcon />,
+      value: data?.current?.pressure,
+      unit: 'hPa',
+    },
+    {
+      label: 'Humidity',
+      icon: <WaterIcon />,
+      value: data?.current?.humidity,
+      unit: '%',
+    },
+    {
+      label: 'Visibility',
+      icon: <VisibilityIcon />,
+      value: (data?.current?.visibility / 1000).toFixed(1),
+      unit: 'km',
+    },
+  ]
+
   return (
     <div className="flex gap-8 flex-wrap mb-12 md:flex-nowrap">
       <MainHighlightsCard data={data} img={img} />
-
       <div className="grid gap-8 auto-cols-fr auto-rows-fr w-full sm:grid-cols-2 lg:w-2/3 lg:grid-cols-3">
-        <HighlightsCard>
-          <h3 className="mb-2 text-2xl font-semibold text-gray-400">Sunrise & Sunset</h3>
-          <div className="flex items-center gap-2 text-xl">
-            <SunriseIcon />
-            <span>{unixTimeToHrsMins(data?.current?.sunrise, data?.timezone)}</span>
-          </div>
-          <div className="flex items-center gap-2 text-xl">
-            <SunsetIcon />
-            <span>{unixTimeToHrsMins(data?.current?.sunset, data?.timezone)}</span>
-          </div>
-        </HighlightsCard>
-
-        <HighlightsCard>
-          <h3 className="mb-2 text-2xl font-semibold text-gray-400">Cloudiness</h3>
-          <div className="flex items-center gap-2 text-2xl">
-            <CloudIcon />
-            <span>{`${data?.current?.clouds}%`}</span>
-          </div>
-        </HighlightsCard>
-
-        <HighlightsCard>
-          <h3 className="mb-2 text-2xl font-semibold text-gray-400">Wind Status</h3>
-          <div className="flex items-center gap-2 text-2xl">
-            <WindIcon />
-            <span>{`${data?.current?.wind_speed}m/s`}</span>
-          </div>
-        </HighlightsCard>
-
-        <HighlightsCard>
-          <h3 className="mb-2 text-2xl font-semibold text-gray-400">Pressure</h3>
-          <div className="flex items-center gap-2 text-2xl">
-            <GaugeIcon />
-            <span>{`${data?.current?.pressure}hPa`}</span>
-          </div>
-        </HighlightsCard>
-
-        <HighlightsCard>
-          <h3 className="mb-2 text-2xl font-semibold text-gray-400">Humidity</h3>
-          <div className="flex items-center gap-2 text-2xl">
-            <DropletIcon />
-            <span>{`${data?.current?.humidity}%`}</span>
-          </div>
-        </HighlightsCard>
-
-        <HighlightsCard>
-          <h3 className="mb-2 text-2xl font-semibold text-gray-400">Visibility</h3>
-          <div className="flex items-center gap-2 text-2xl">
-            <EyeIcon />
-            <span>{`${(data?.current?.visibility / 1000).toFixed(1)}km `}</span>
-          </div>
-        </HighlightsCard>
+        {highlightsData.map((highlightsCardData, idx) => (
+          <HighlightsCard data={highlightsCardData} key={idx} />
+        ))}
       </div>
     </div>
   )

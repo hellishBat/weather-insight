@@ -7,7 +7,7 @@ const SearchForm: FC<SearchFormTypes> = ({ submitHandler, inputChangeHandler, se
   return (
     <form className={'group relative flex w-full max-w-lg'} onSubmit={submitHandler}>
       <input
-        className={`peer w-full py-2 pl-9 pr-3 rounded-md border-none bg-slate-100 shadow-inner focus:transition-all focus:bg-slate-200 focus:pl-3 dark:bg-gray-900 dark:focus:bg-gray-900/50 ${
+        className={`peer w-full py-2 pl-9 pr-3 rounded-md border-none bg-slate-200/70 shadow-inner focus:transition-all focus:bg-slate-200 focus:pl-3 dark:bg-gray-900/30 dark:focus:bg-gray-900/50 ${
           error
             ? 'bg-red-500/10 outline outline-4 outline-red-500/60 placeholder:text-red-500/60 dark:bg-red-900/10'
             : ''

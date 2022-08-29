@@ -1,18 +1,29 @@
 // convertTime
 import moment from 'moment'
 
-const unixTimeToHrsMins = (unixTime: number, unixTimezoneOffset: number) => {
-  return moment
-    .unix(unixTime + unixTimezoneOffset)
-    .utc()
-    .format('HH:mm')
+const convertTime = (unixTime: number, unixTimezoneOffset: number, format: string) => {
+  switch (format) {
+    case '24Hours':
+      return moment
+        .unix(unixTime + unixTimezoneOffset)
+        .utc()
+        .format('HH:mm')
+      break
+
+    case 'dayOfWeek':
+      return moment
+        .unix(unixTime + unixTimezoneOffset)
+        .utc()
+        .format('ddd')
+      break
+
+    case 'fullDate':
+      return moment
+        .unix(unixTime + unixTimezoneOffset)
+        .utc()
+        .format('MMMM Do YYYY, HH:mm')
+      break
+  }
 }
 
-const unixTimeToWeekDay = (unixTime: number, unixTimezoneOffset: number) => {
-  return moment
-    .unix(unixTime + unixTimezoneOffset)
-    .utc()
-    .format('ddd')
-}
-
-export { unixTimeToHrsMins, unixTimeToWeekDay }
+export { convertTime }

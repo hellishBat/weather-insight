@@ -1,11 +1,23 @@
 // HighlightsCard
 import { FC } from 'react'
-import { ChildrenTypes } from '@/types'
+import { HighlightsTypes } from '@/types'
+import { styles } from '@/styles'
 
-const HighlightCard: FC<ChildrenTypes> = ({ children }) => {
+const HighlightCard: FC<HighlightsTypes> = ({ data }) => {
   return (
-    <article className="flex flex-col justify-center items-center rounded-xl p-4 bg-white border border-white/5 shadow-md text-center dark:bg-slate-800">
-      {children}
+    <article
+      className={`flex flex-col justify-center items-center p-8 md:p-4 ${styles.materialItem}`}
+    >
+      <div className="flex gap-3 align-baseline">
+        <figure className="[&>*]:w-14 [&>*]:h-14">{data.icon}</figure>
+        <div>
+          <h3 className={`${styles.cardLabel.sm}`}>{data.label}</h3>
+          <div className="flex items-baseline">
+            <span className="text-3xl font-semibold">{data.value}</span>
+            <span>{data.unit}</span>
+          </div>
+        </div>
+      </div>
     </article>
   )
 }

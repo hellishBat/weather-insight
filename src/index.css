@@ -41,7 +41,7 @@
 :root {
   --color-white: #ffffff;
   --color-black-30: rgba(0, 0, 0, 0.3);
-  --color-cyan: cyan;
+  --color-violet: #818cf8;
 }
 
 html,
@@ -107,7 +107,7 @@ svg {
 }
 
 ::selection {
-  background-color: var(--color-cyan);
+  background-color: var(--color-violet);
   color: var(--color-white);
 }
 

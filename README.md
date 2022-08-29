@@ -18,6 +18,10 @@
   - OpenWeather
   - Unsplash
 
+## Assets Used
+
+- Material Icons
+
 ## Live Demo
 
 [Live Demo](https://weather-insight.vercel.app/)

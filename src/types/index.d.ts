@@ -18,7 +18,7 @@ type LocationButtonTypes = {
 
 type HighlightsTypes = {
   data: any
-  img: string
+  img?: string
 }
 
 type ForecastTypes = {

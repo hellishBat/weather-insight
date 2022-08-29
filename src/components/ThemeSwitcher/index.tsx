@@ -1,6 +1,7 @@
 // ThemeSwitcher
 import { useTheme } from '@/context/ThemeContext'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
+import { styles } from '@/styles'
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme()
@@ -10,7 +11,7 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div className="p-2 rounded-md shadow-md bg-white border border-white/5 dark:bg-slate-800 ">
+    <div className={`p-2 ${styles.materialItem}`}>
       <DarkModeSwitch
         checked={!theme}
         onChange={toggleDarkMode}
