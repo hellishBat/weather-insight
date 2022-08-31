@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Environment variables
 .env
+
+# Project Folders
+dist/
+reports/

@@ -4,44 +4,47 @@ import MainHighlightsCard from '@/components/MainHighlightsCard'
 import HighlightsCard from '@/components/HighlightsCard'
 import { HighlightsTypes } from '@/types'
 import { SunIcon, CloudIcon, WaterIcon, WindIcon, MeterIcon, VisibilityIcon } from '@/assets'
+import data from '@/data/index.json'
+
+const highlightsTextContent = data.highlights.cards
 
 const Highlights: FC<HighlightsTypes> = ({ data, img }) => {
   const highlightsData = [
     {
-      label: 'UV Index',
+      label: highlightsTextContent[0].label,
       icon: <SunIcon />,
       value: data?.current?.uvi,
-      unit: '',
+      unit: highlightsTextContent[0].unit,
     },
     {
-      label: 'Cloudiness',
+      label: highlightsTextContent[1].label,
       icon: <CloudIcon />,
       value: data?.current?.clouds,
-      unit: '%',
+      unit: highlightsTextContent[1].unit,
     },
     {
-      label: 'Wind Status',
+      label: highlightsTextContent[2].label,
       icon: <WindIcon />,
       value: data?.current?.wind_speed,
-      unit: 'm/s',
+      unit: highlightsTextContent[2].unit,
     },
     {
-      label: 'Pressure',
+      label: highlightsTextContent[3].label,
       icon: <MeterIcon />,
       value: data?.current?.pressure,
-      unit: 'hPa',
+      unit: highlightsTextContent[3].unit,
     },
     {
-      label: 'Humidity',
+      label: highlightsTextContent[4].label,
       icon: <WaterIcon />,
       value: data?.current?.humidity,
-      unit: '%',
+      unit: highlightsTextContent[4].unit,
     },
     {
-      label: 'Visibility',
+      label: highlightsTextContent[5].label,
       icon: <VisibilityIcon />,
       value: (data?.current?.visibility / 1000).toFixed(1),
-      unit: 'km',
+      unit: highlightsTextContent[5].unit,
     },
   ]
 

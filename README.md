@@ -1,5 +1,7 @@
 # WeatherInsight - A React Weather App
 
+![Imgur](https://i.imgur.com/zliGvp3.png)
+
 ## Features
 
 - Search weather by city name (Default city is set to Kyiv, Ukraine);

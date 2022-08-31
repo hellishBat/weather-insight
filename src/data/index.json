@@ -1,6 +1,15 @@
 {
   "highlights": {
-    "heading": "Today's Highlights"
+    "heading": "Today's Highlights",
+    "text": "As of",
+    "cards": [
+      { "label": "UV Index", "unit": "" },
+      { "label": "Cloudiness", "unit": "%" },
+      { "label": "Wind Status", "unit": "m/s" },
+      { "label": "Pressure", "unit": "hPa" },
+      { "label": "Humidity", "unit": "%" },
+      { "label": "Visibility", "unit": "km" }
+    ]
   },
   "forecast": {
     "heading": ["Today", "Week"]

@@ -1,5 +1,5 @@
 // Dashboard
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { WeatherContext } from '@/context/WeatherContext'
 import useWeatherFetch from '@/hooks/useWeatherFetch'
 import useCoordinates from '@/hooks/useCoordinates'
@@ -10,6 +10,7 @@ import SearchForm from '@/components/SearchForm'
 import LocationButton from '@/components/LocationButton'
 import Highlights from '@/components/Highlights'
 import Forecast from '@/components/Forecast'
+import Spinner from '@/components/Spinner'
 import { convertTime } from '@/utils/convertTime'
 import data from '@/data/index.json'
 import { styles } from '@/styles'
@@ -23,10 +24,9 @@ const Dashboard = () => {
   const { searchImgByWord } = useImgFetch()
 
   const fetchCoordinates = async () => {
-    setSearchTerm('')
     findCoordinates()
-    await searchWeatherByCoords(coords.lat, coords.lng)
-    await searchImgByWord(weather.name)
+    searchWeatherByCoords(coords.lat, coords.lng)
+    searchImgByWord(weather.name)
   }
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
@@ -49,6 +49,12 @@ const Dashboard = () => {
   const showTodayForecast = () => {
     setWeekMode(false)
   }
+
+  useEffect(() => {
+    findCoordinates()
+    searchWeatherByCoords(coords.lat, coords.lng)
+    searchImgByWord(weather.name)
+  }, [coords.lat, coords.lng])
 
   return (
     <>
@@ -74,10 +80,10 @@ const Dashboard = () => {
               </div>
 
               <section>
-                <div className="flex flex-wrap items-baseline mb-6 text-gray-500 font-bold">
-                  <h2 className="text-3xl mr-auto">{`${data.highlights.heading}`}</h2>
-                  <p className="text-xl">
-                    As of {convertTime(weather.dt, weather.timezone, 'fullDate')}
+                <div className="flex flex-wrap items-baseline mb-6 text-gray-500">
+                  <h2 className="mr-auto text-3xl font-bold">{data.highlights.heading}</h2>
+                  <p className="text-xl font-semibold">
+                    {data.highlights.text} {convertTime(weather.dt, weather.timezone, 'fullDate')}
                   </p>
                 </div>
                 <Highlights data={weather} img={bgImg} />
@@ -114,7 +120,7 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
-        <div className="flex justify-center items-center min-h-screen">Loading...</div>
+        <Spinner />
       )}
     </>
   )
