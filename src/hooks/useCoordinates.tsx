@@ -12,7 +12,9 @@ const useCoordinates = () => {
           setCoords({ lat: position.coords.latitude, lng: position.coords.longitude })
         },
         (positionError) => {
-          alert('An error occurred: ' + positionError)
+          alert(
+            'A location error occurred. For the best experience, please turn on location services on your device.'
+          )
           setCoords({ lat: '50.4501', lng: '30.5234' })
           console.log(positionError)
         }
