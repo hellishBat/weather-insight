@@ -9,7 +9,7 @@ const HighlightCard: FC<HighlightsTypes> = ({ data }) => {
       className={`flex flex-col justify-center items-center p-8 md:p-4 ${styles.materialItem}`}
     >
       <div className="flex gap-3 align-baseline">
-        <figure className="[&>*]:w-14 [&>*]:h-14">{data.icon}</figure>
+        <figure className={`[&>*]:w-14 [&>*]:h-14 ${data.color}`}>{data.icon}</figure>
         <div>
           <h3 className={`${styles.cardLabel.sm}`}>{data.label}</h3>
           <div className="flex items-baseline">

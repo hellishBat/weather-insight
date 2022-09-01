@@ -10,7 +10,7 @@ const styles = {
     sm: 'text-xs font-semibold text-gray-400 uppercase',
   },
   materialItem:
-    'bg-white border-transparent rounded-xl shadow-md dark:bg-slate-800 dark:border-white/5',
+    'bg-white border border-transparent rounded-xl shadow-md dark:bg-slate-800 dark:border-white/5',
 }
 
 export { styles }

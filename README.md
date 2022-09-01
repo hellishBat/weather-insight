@@ -1,12 +1,12 @@
 # WeatherInsight - A React Weather App
 
-![Imgur](https://i.imgur.com/zliGvp3.png)
+![Imgur](https://i.imgur.com/ySPQ6A3.png)
 
 ## Features
 
-- Search weather by city name (Default city is set to Kyiv, Ukraine);
+- The default location is set to Odesa, Ukraine;
+- Weather search by location and city name;
 - For the main weather card a background image is automatically applied with the photo found for the given location on unsplash.com (the image is selected randomly from the first 10 results for the given location);
-- Search by location;
 - Dark Mode Included.
 
 ## Techchnologies Used

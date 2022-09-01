@@ -69,7 +69,9 @@ const Dashboard = () => {
                 <ThemeSwitcher />
               </div>
 
-              <div className={`flex justify-center gap-4 mb-12 p-6 md:p-8 ${styles.materialItem}`}>
+              <div
+                className={`sticky flex justify-center gap-4 mb-12 p-6 md:p-8 ${styles.materialItem}`}
+              >
                 <SearchForm
                   submitHandler={handleSubmit}
                   inputChangeHandler={changeInput}

@@ -1,7 +1,7 @@
 // useImgFetch
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { WeatherContext } from '@/context/WeatherContext'
-import { SEARCH_BY_WORD, SEARCH_DEFAULT } from '@/api/imgApi'
+import { SEARCH_BY_WORD } from '@/api/imgApi'
 import fetchData from '@/utils/fetchData'
 
 const useImgFetch = () => {
@@ -18,12 +18,6 @@ const useImgFetch = () => {
       }
     })
   }
-
-  useEffect(() => {
-    fetchData(`${SEARCH_DEFAULT}`).then((res) => {
-      setBgImg(res?.data.results[Math.floor(Math.random() * 10)]?.urls?.regular)
-    })
-  }, [setBgImg])
 
   return { searchImgByWord }
 }

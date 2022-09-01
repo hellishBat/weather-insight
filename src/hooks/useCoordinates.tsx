@@ -12,15 +12,17 @@ const useCoordinates = () => {
           setCoords({ lat: position.coords.latitude, lng: position.coords.longitude })
         },
         (positionError) => {
-          alert(
-            'A location error occurred. For the best experience, please turn on location services on your device.'
-          )
-          setCoords({ lat: '50.4501', lng: '30.5234' })
+          setCoords({ lat: '46.46667', lng: '30.73333' })
           console.log(positionError)
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 2000,
+          maximumAge: 0,
         }
       )
     } else {
-      console.log("It's not supported by this browser.")
+      console.log('Location search is not supported by this browser.')
     }
   }
 
