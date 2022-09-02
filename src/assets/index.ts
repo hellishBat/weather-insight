@@ -10,6 +10,7 @@ import MeterIcon from '@/assets/images/svg/meter.svg'
 import VisibilityIcon from '@/assets/images/svg/visibility.svg'
 import SunriseIcon from '@/assets/images/svg/sunrise.svg'
 import SunsetIcon from '@/assets/images/svg/sunset.svg'
+import HeartIcon from '@/assets/images/svg/heart.svg'
 
 export {
   SearchIcon,
@@ -22,4 +23,5 @@ export {
   VisibilityIcon,
   SunriseIcon,
   SunsetIcon,
+  HeartIcon,
 }

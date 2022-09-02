@@ -82,7 +82,7 @@ const Dashboard = () => {
               </div>
 
               <section>
-                <div className="flex flex-wrap items-baseline mb-6 text-gray-500">
+                <div className="flex flex-wrap items-baseline mb-4 text-gray-500 sm:mb-6">
                   <h2 className="mr-auto text-3xl font-bold">{data.highlights.heading}</h2>
                   <p className="text-xl font-semibold">
                     {data.highlights.text} {convertTime(weather.dt, weather.timezone, 'fullDate')}
@@ -92,7 +92,7 @@ const Dashboard = () => {
               </section>
 
               <section>
-                <div className="flex gap-3 mb-6 text-2xl font-bold text-gray-500">
+                <div className="flex gap-3 mb-4 text-2xl font-bold text-gray-500 sm:mb-6">
                   <button
                     className={`p-0 ${isWeekMode ? '' : `${styles.dashboardBtn.active}`} ${
                       styles.dashboardBtn.normal

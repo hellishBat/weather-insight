@@ -11,6 +11,6 @@ module.exports = {
     'no-descending-specificity': null,
     'string-quotes': 'single',
     'font-family-name-quotes': 'always-unless-keyword',
-    // 'value-keyword-case': { camelCaseSvgKeywords: true },
+    // 'value-keyword-case': ['lower', { camelCaseSvgKeywords: true }],
   },
 }

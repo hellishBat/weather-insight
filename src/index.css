@@ -40,7 +40,7 @@
 /* General */
 :root {
   --color-white: #ffffff;
-  --color-black-30: rgba(0, 0, 0, 0.3);
+  --color-black-30: rgb(0, 0, 0/ 30%);
   --color-violet: #818cf8;
 }
 

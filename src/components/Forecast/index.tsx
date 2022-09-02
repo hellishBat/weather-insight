@@ -11,9 +11,9 @@ import { ForecastTypes } from '@/types'
 const Forecast: FC<ForecastTypes> = ({ data, isWeekMode, timezone }) => {
   return (
     <Swiper
-      className="-my-8"
+      className="-my-2"
       slidesPerView={2}
-      spaceBetween={32}
+      spaceBetween={24}
       freeMode={true}
       keyboard={{
         enabled: true,
@@ -22,11 +22,14 @@ const Forecast: FC<ForecastTypes> = ({ data, isWeekMode, timezone }) => {
         forceToAxis: true,
       }}
       modules={[FreeMode, Keyboard, Mousewheel]}
-      breakpoints={{ 640: { slidesPerView: 4 }, 1024: { slidesPerView: 6 } }}
+      breakpoints={{
+        640: { slidesPerView: 4, spaceBetween: 32 },
+        1024: { slidesPerView: 6, spaceBetween: 32 },
+      }}
     >
       {data &&
         data.map((forecastItem: any, idx: Key | undefined) => (
-          <SwiperSlide className="py-8" key={idx}>
+          <SwiperSlide className="py-2" key={idx}>
             <ForecastCard data={forecastItem} isWeekMode={isWeekMode} timezone={timezone} />
           </SwiperSlide>
         ))}
