@@ -7,7 +7,7 @@ import { styles } from '@/styles'
 const ForecastCard: FC<ForecastTypes> = ({ data, isWeekMode, timezone }) => {
   return (
     <article
-      className={`flex flex-col items-center pb-6 text-center overflow-hidden ${styles.materialItem}`}
+      className={`flex flex-col items-center pb-6 text-center overflow-hidden ${styles.card}`}
     >
       <h3 className={`w-full py-6 bg-slate-200/70 ${styles.cardLabel.normal} dark:bg-gray-900/30`}>
         {isWeekMode

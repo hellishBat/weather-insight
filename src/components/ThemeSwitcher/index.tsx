@@ -11,13 +11,8 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div className={`p-2 ${styles.materialItem}`}>
-      <DarkModeSwitch
-        checked={!theme}
-        onChange={toggleDarkMode}
-        size={32}
-        sunColor="rgb(55 65 81)"
-      />
+    <div className={`${styles.button.outlined} ${styles.button.common}`}>
+      <DarkModeSwitch checked={!theme} onChange={toggleDarkMode} size={24} sunColor="#334155" />
     </div>
   )
 }

@@ -5,7 +5,6 @@ import useWeatherFetch from '@/hooks/useWeatherFetch'
 import useCoordinates from '@/hooks/useCoordinates'
 import useImgFetch from '@/hooks/useImgFetch'
 import Container from '@/components/Container'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
 import SearchForm from '@/components/SearchForm'
 import LocationButton from '@/components/LocationButton'
 import Highlights from '@/components/Highlights'
@@ -13,6 +12,7 @@ import Forecast from '@/components/Forecast'
 import Spinner from '@/components/Spinner'
 import { convertTime } from '@/utils/convertTime'
 import data from '@/data/index.json'
+import { TodayIcon, WeekIcon } from '@/assets'
 import { styles } from '@/styles'
 
 const Dashboard = () => {
@@ -60,18 +60,12 @@ const Dashboard = () => {
     <>
       {typeof weather.main != 'undefined' ? (
         <div
-          className=" bg-center bg-no-repeat bg-cover dark:bg-gray-900 "
+          className=" bg-center bg-no-repeat bg-cover dark:bg-gray-900"
           style={{ backgroundImage: `url(${bgImg})` }}
         >
-          <div className="min-h-full pb-16 bg-slate-200/70 dark:bg-gray-900/[.85] backdrop-blur-[40px]">
+          <div className="min-h-full py-16 bg-slate-200/70 dark:bg-gray-900/[.85] backdrop-blur-2xl">
             <Container>
-              <div className="flex justify-end items-center pt-8 mb-8">
-                <ThemeSwitcher />
-              </div>
-
-              <div
-                className={`sticky flex justify-center gap-4 mb-12 p-6 md:p-8 ${styles.materialItem}`}
-              >
+              <div className={`flex justify-center gap-4 mb-12 p-6 md:p-8 ${styles.card}`}>
                 <SearchForm
                   submitHandler={handleSubmit}
                   inputChangeHandler={changeInput}
@@ -81,7 +75,7 @@ const Dashboard = () => {
                 <LocationButton clickHandler={fetchCoordinates} />
               </div>
 
-              <section>
+              <section className="mb-12">
                 <div className="flex flex-wrap items-baseline mb-4 text-gray-500 sm:mb-6">
                   <h2 className="mr-auto text-3xl font-bold">{data.highlights.heading}</h2>
                   <p className="text-xl font-semibold">
@@ -92,24 +86,26 @@ const Dashboard = () => {
               </section>
 
               <section>
-                <div className="flex gap-3 mb-4 text-2xl font-bold text-gray-500 sm:mb-6">
+                <div className="flex gap-4 mb-4 sm:mb-6 border-b border-gray-200 dark:border-gray-700">
                   <button
-                    className={`p-0 ${isWeekMode ? '' : `${styles.dashboardBtn.active}`} ${
-                      styles.dashboardBtn.normal
-                    }`}
+                    className={`${
+                      isWeekMode ? `${styles.tabBtn.inactive}` : `${styles.tabBtn.active}`
+                    } ${styles.tabBtn.common}`}
                     type="button"
                     onClick={showTodayForecast}
                   >
-                    {data.forecast.heading[0]}
+                    <TodayIcon />
+                    <span>{data.forecast.heading[0]}</span>
                   </button>
                   <button
-                    className={`p-0 ${isWeekMode ? `${styles.dashboardBtn.active}` : ''} ${
-                      styles.dashboardBtn.normal
-                    }`}
+                    className={`${
+                      isWeekMode ? `${styles.tabBtn.active}` : `${styles.tabBtn.inactive}`
+                    } ${styles.tabBtn.common}`}
                     type="button"
                     onClick={showWeekForecast}
                   >
-                    {data.forecast.heading[1]}
+                    <WeekIcon />
+                    <span>{data.forecast.heading[1]}</span>
                   </button>
                 </div>
                 <Forecast

@@ -2,15 +2,16 @@
 import { FC } from 'react'
 import { LocationButtonTypes } from '@/types'
 import { LocationIcon } from '@/assets'
+import { styles } from '@/styles'
 
 const LocationButton: FC<LocationButtonTypes> = ({ clickHandler }) => {
   return (
     <button
-      className="py-2 px-3 rounded-md bg-slate-700 border border-white/5 font-medium text-white hover:transition-colors  md:hover:shadow-sm md:hover:bg-slate-600 md:hover:dark:bg-slate-600"
+      className={`${styles.button.filled} ${styles.button.common}`}
       onClick={clickHandler}
       type="button"
     >
-      <LocationIcon />
+      <LocationIcon className="text-[1.5em]" />
     </button>
   )
 }
