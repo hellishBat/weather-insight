@@ -6,7 +6,7 @@ import fetchData from '@/utils/fetchData'
 import convertRegionNames from '@/utils/convertRegionNames'
 
 const useWeatherFetch = () => {
-  const { setWeather, setError, weather } = useContext(WeatherContext)
+  const { setWeather, setError } = useContext(WeatherContext)
 
   const searchWeatherByWord = (location: string) => {
     fetchData(`${API_URL_APPID}?q=${location}&appid=${API_APPID}&units=metric`).then((res: any) => {
@@ -17,7 +17,6 @@ const useWeatherFetch = () => {
           country_code: res?.data?.sys?.country,
           country: convertRegionNames(res?.data?.sys?.country),
         })
-        setError(false)
 
         fetchData(
           `${GET_NEXT_DAYS_HOURS}&lat=${res.data.coord.lat}&lon=${res.data.coord.lon}&units=metric`
@@ -29,18 +28,16 @@ const useWeatherFetch = () => {
             current: res?.data?.current,
           }))
         })
+
+        setError(false)
       } else {
         setError(true)
-        console.log('error is set!')
       }
     })
-    console.log(weather)
-    console.log(weather.timezone)
   }
 
   const searchWeatherByCoordinates = (lat: any, lng: any) => {
     if (lat && lng) {
-      setError(false)
       fetchData(`${SEARCH_BY_LOCATION}&lat=${lat}&lon=${lng}&units=metric`).then((res: any) => {
         setWeather({
           ...res?.data,
@@ -58,6 +55,8 @@ const useWeatherFetch = () => {
           current: res?.data?.current,
         }))
       })
+
+      setError(false)
     }
   }
 

@@ -86,7 +86,7 @@ const Dashboard = () => {
               </section>
 
               <section>
-                <div className="flex gap-4 mb-4 sm:mb-6 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex gap-4 dark:border-gray-700">
                   <button
                     className={`${
                       isWeekMode ? `${styles.tabBtn.inactive}` : `${styles.tabBtn.active}`
@@ -108,6 +108,7 @@ const Dashboard = () => {
                     <span>{data.forecast.heading[1]}</span>
                   </button>
                 </div>
+                <div className="h-[3px] mb-4 sm:mb-6 bg-gray-200 shadow-inner dark:bg-gray-700"></div>
                 <Forecast
                   data={isWeekMode ? weather?.daily : weather?.hourly}
                   isWeekMode={isWeekMode}

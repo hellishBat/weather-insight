@@ -9,16 +9,20 @@ const ForecastCard: FC<ForecastTypes> = ({ data, isWeekMode, timezone }) => {
     <article
       className={`flex flex-col items-center pb-6 text-center overflow-hidden ${styles.card}`}
     >
-      <h3 className={`w-full py-6 bg-slate-200/70 ${styles.cardLabel.normal} dark:bg-gray-900/30`}>
+      <h3
+        className={`w-full py-6 mb-4 bg-gradient-to-br from-gray-200 to-gray-300 ${styles.cardLabel.normal} dark:from-gray-700 dark:to-gray-800`}
+      >
         {isWeekMode
           ? convertTime(data.dt, timezone, 'dayOfWeek')
           : convertTime(data.dt, timezone, '24Hours')}
       </h3>
-      <img
-        className="w-24 h-w-24 object-contain"
-        src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
-        alt={data?.weather?.[0]?.main}
-      ></img>
+      <figure className="w-24 h-w- mb-3 bg-slate-300 rounded-full shadow-inner dark:bg-gray-800">
+        <img
+          className=" object-contain"
+          src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
+          alt={data?.weather?.[0]?.main}
+        ></img>
+      </figure>
       <p className="flex flex-col items-center w-full px-4 text-2xl">
         {isWeekMode ? (
           <>
