@@ -1,5 +1,6 @@
 // Styles
 const styles = {
+  layout: 'bg-white text-gray-500 dark:bg-slate-800 dark:text-gray-400',
   button: {
     common: 'p-2 rounded-md border-none hover:transition-colors',
     filled:

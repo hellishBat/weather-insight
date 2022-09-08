@@ -1,17 +1,24 @@
 // Header
+import useScrollDirection from '@/hooks/useScrollDirection'
 import Container from '@/components/Container'
+import Logo from '@/components/Logo'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
-import { Logo } from '@/assets'
+import { styles } from '@/styles'
 
 const Header = () => {
+  const scrollDirection = useScrollDirection()
+
   return (
-    <header className="w-full py-4 text-gray-500 dark:bg-slate-800 dark:text-gray-400">
+    <header
+      className={`fixed top-0 left-0 z-50 w-full py-4 ${
+        styles.layout
+      } shadow-md transition-[transform,opacity] duration-500 ${
+        scrollDirection === 'down' ? '-translate-y-full opacity-5' : 'translate-y-0 opacity-100'
+      }`}
+    >
       <Container>
         <div className="flex items-center">
-          <a className="w-40 mr-auto overflow-hidden md:w-48" href="/">
-            <Logo width="auto" height="auto" title="WeatherInsight" />
-            <span className="sr-only">WeatherInsight Home Page</span>
-          </a>
+          <Logo />
           <ThemeSwitcher />
         </div>
       </Container>

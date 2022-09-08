@@ -2,6 +2,7 @@
 import Container from '@/components/Container'
 import Link from '@/components/Link'
 import data from '@/data/index.json'
+import { styles } from '@/styles'
 import { HeartIcon } from '@/assets'
 
 const footerLinks = data.footer.links
@@ -9,7 +10,7 @@ const footerText = data.footer.text
 
 const Footer = () => {
   return (
-    <footer className="py-8 text-xs text-gray-500 dark:bg-slate-800 dark:text-gray-400">
+    <footer className={`py-8 text-xs ${styles.layout}`}>
       <Container>
         <div className="flex flex-wrap justify-center items-center gap-1">
           <span>{footerText[0]}</span>

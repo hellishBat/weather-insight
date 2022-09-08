@@ -19,7 +19,7 @@ const useImgFetch = () => {
     })
   }
 
-  return { searchImgByWord }
+  return searchImgByWord
 }
 
 export default useImgFetch

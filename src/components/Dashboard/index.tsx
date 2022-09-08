@@ -19,9 +19,9 @@ const Dashboard = () => {
   const [isWeekMode, setWeekMode] = useState(false)
   const { weather, bgImg, searchTerm, setSearchTerm, coords, error, setError } =
     useContext(WeatherContext)
-  const [findCoordinates] = useCoordinates()
+  const findCoordinates = useCoordinates()
   const [searchWeatherByWord, searchWeatherByCoords] = useWeatherFetch()
-  const { searchImgByWord } = useImgFetch()
+  const searchImgByWord = useImgFetch()
 
   const fetchCoordinates = async () => {
     findCoordinates()
@@ -63,7 +63,7 @@ const Dashboard = () => {
           className=" bg-center bg-no-repeat bg-cover dark:bg-gray-900"
           style={{ backgroundImage: `url(${bgImg})` }}
         >
-          <div className="min-h-full py-16 bg-slate-200/70 dark:bg-gray-900/[.85] backdrop-blur-2xl">
+          <div className="min-h-full pt-36 pb-16 bg-slate-200/70 dark:bg-gray-900/[.85] backdrop-blur-2xl">
             <Container>
               <div className={`flex justify-center gap-4 mb-12 p-6 md:p-8 ${styles.card}`}>
                 <SearchForm

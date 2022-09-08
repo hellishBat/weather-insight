@@ -1,6 +1,6 @@
 // Assets
 // SVGs
-import Logo from '@/assets/images/svg/logo.svg'
+import BrandLogo from '@/assets/images/svg/logo.svg'
 import SearchIcon from '@/assets/images/svg/search.svg'
 import LocationIcon from '@/assets/images/svg/location.svg'
 import CloudIcon from '@/assets/images/svg/cloud.svg'
@@ -16,7 +16,7 @@ import SunsetIcon from '@/assets/images/svg/sunset.svg'
 import HeartIcon from '@/assets/images/svg/heart.svg'
 
 export {
-  Logo,
+  BrandLogo,
   SearchIcon,
   LocationIcon,
   SunIcon,

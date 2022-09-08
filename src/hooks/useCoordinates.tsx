@@ -26,7 +26,7 @@ const useCoordinates = () => {
     }
   }
 
-  return [findCoordinates]
+  return findCoordinates
 }
 
 export default useCoordinates
