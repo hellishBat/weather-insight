@@ -101,6 +101,5 @@
     "> 5%",
     "not dead",
     "not IE < 11"
-  ],
-  "packageManager": "yarn@3.2.3"
+  ]
 }
