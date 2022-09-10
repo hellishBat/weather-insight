@@ -7,23 +7,23 @@ import { styles } from '@/styles'
 const ForecastCard: FC<ForecastTypes> = ({ data, isWeekMode, timezone }) => {
   return (
     <article
-      className={`flex flex-col items-center pb-6 text-center overflow-hidden ${styles.card}`}
+      className={`flex flex-col items-center overflow-hidden pb-6 text-center ${styles.card}`}
     >
       <h3
-        className={`w-full py-6 mb-4 bg-gradient-to-br from-gray-200 to-gray-300 ${styles.cardLabel.normal} dark:from-gray-700 dark:to-gray-800`}
+        className={`mb-4 w-full bg-gradient-to-br from-gray-200 to-gray-300 py-6 ${styles.cardLabel.normal} dark:from-gray-700 dark:to-gray-800`}
       >
         {isWeekMode
           ? convertTime(data.dt, timezone, 'dayOfWeek')
           : convertTime(data.dt, timezone, '24Hours')}
       </h3>
-      <figure className="w-24 h-w- mb-3 bg-slate-300 rounded-full shadow-inner dark:bg-gray-800">
+      <figure className="mb-3 h-24 w-24 rounded-full bg-slate-300 shadow-inner dark:bg-gray-800">
         <img
           className=" object-contain"
           src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
           alt={data?.weather?.[0]?.main}
         ></img>
       </figure>
-      <p className="flex flex-col items-center w-full px-4 text-2xl">
+      <p className="flex w-full flex-col items-center px-4 text-2xl">
         {isWeekMode ? (
           <>
             <span className="font-semibold">{`${data?.temp?.day.toFixed(0)}°C`}</span>

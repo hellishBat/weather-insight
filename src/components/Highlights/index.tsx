@@ -55,9 +55,9 @@ const Highlights: FC<HighlightsTypes> = ({ data, img }) => {
   ]
 
   return (
-    <div className="flex gap-6 flex-wrap sm:gap-8 md:flex-nowrap">
+    <div className="flex flex-wrap gap-6 sm:gap-8 md:flex-nowrap">
       <MainHighlightsCard data={data} img={img} />
-      <div className="grid gap-6 auto-cols-fr auto-rows-fr w-full sm:gap-8 sm:grid-cols-2 lg:w-2/3 lg:grid-cols-3">
+      <div className="grid w-full auto-cols-fr auto-rows-fr gap-6 sm:grid-cols-2 sm:gap-8 lg:w-2/3 lg:grid-cols-3">
         {highlightsData.map((highlightsCardData, idx) => (
           <HighlightsCard data={highlightsCardData} key={idx} />
         ))}

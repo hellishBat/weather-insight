@@ -8,13 +8,13 @@ import { SunriseIcon, SunsetIcon } from '@/assets'
 const MainHighlightsCard: FC<HighlightsTypes> = ({ data, img }) => {
   return (
     <article
-      className="flex flex-col justify-between w-full rounded-xl shadow-md p-6 bg-center bg-no-repeat bg-cover overlay-30 text-white capitalize aspect-square overflow-hidden md:w-1/2 lg:w-4/12 "
+      className="overlay-30 flex aspect-square w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-6 capitalize text-white shadow-md md:w-1/2 lg:w-4/12 "
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className="flex flex-col gap-3 lg:gap-4">
         <div className="flex items-baseline">
           <img
-            className="w-12 h-12 object-contain"
+            className="h-12 w-12 object-contain"
             src={`http://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`}
             alt={data?.weather?.[0]?.main}
           ></img>

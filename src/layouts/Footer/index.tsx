@@ -12,9 +12,9 @@ const Footer = () => {
   return (
     <footer className={`py-8 text-xs ${styles.layout}`}>
       <Container>
-        <div className="flex flex-wrap justify-center items-center gap-1">
+        <div className="flex flex-wrap items-center justify-center gap-1">
           <span>{footerText[0]}</span>
-          <HeartIcon className="w-[1.25em] h-[1.25em]" />
+          <HeartIcon className="h-[1.25em] w-[1.25em]" />
           <span>{footerText[1]}</span>
           <Link href={footerLinks.owner.href}>{footerLinks.owner.text}</Link>
           <span>{footerText[2]}</span>

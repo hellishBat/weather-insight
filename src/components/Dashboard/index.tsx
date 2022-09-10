@@ -60,12 +60,12 @@ const Dashboard = () => {
     <>
       {typeof weather.main != 'undefined' ? (
         <div
-          className=" bg-center bg-no-repeat bg-cover dark:bg-gray-900"
+          className=" bg-cover bg-center bg-no-repeat dark:bg-gray-900"
           style={{ backgroundImage: `url(${bgImg})` }}
         >
-          <div className="min-h-full pt-36 pb-16 bg-slate-200/70 dark:bg-gray-900/[.85] backdrop-blur-2xl">
+          <div className="min-h-full bg-slate-200/70 pt-36 pb-16 backdrop-blur-2xl dark:bg-gray-900/[.85]">
             <Container>
-              <div className={`flex justify-center gap-4 mb-12 p-6 md:p-8 ${styles.card}`}>
+              <div className={`mb-12 flex justify-center gap-4 p-6 md:p-8 ${styles.card}`}>
                 <SearchForm
                   submitHandler={handleSubmit}
                   inputChangeHandler={changeInput}
@@ -76,7 +76,7 @@ const Dashboard = () => {
               </div>
 
               <section className="mb-12">
-                <div className="flex flex-wrap items-baseline mb-4 text-gray-500 sm:mb-6">
+                <div className="mb-4 flex flex-wrap items-baseline text-gray-500 sm:mb-6">
                   <h2 className="mr-auto text-3xl font-bold">{data.highlights.heading}</h2>
                   <p className="text-xl font-semibold">
                     {data.highlights.text} {convertTime(weather.dt, weather.timezone, 'fullDate')}
@@ -108,7 +108,7 @@ const Dashboard = () => {
                     <span>{data.forecast.heading[1]}</span>
                   </button>
                 </div>
-                <div className="h-[3px] mb-4 sm:mb-6 bg-gray-200 shadow-inner dark:bg-gray-700"></div>
+                <div className="mb-4 h-[3px] bg-gray-200 shadow-inner dark:bg-gray-700 sm:mb-6"></div>
                 <Forecast
                   data={isWeekMode ? weather?.daily : weather?.hourly}
                   isWeekMode={isWeekMode}

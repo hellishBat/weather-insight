@@ -1,10 +1,10 @@
 // Spinner
 const Spinner = () => {
   return (
-    <div className="flex justify-center items-center min-h-[80vh]">
+    <div className="flex min-h-[80vh] items-center justify-center">
       <div role="status">
         <svg
-          className="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
+          className="mr-2 inline h-8 w-8 animate-spin fill-gray-600 text-gray-200 dark:fill-gray-300 dark:text-gray-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
