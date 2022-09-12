@@ -32,6 +32,10 @@ type LinkTypes = {
   children: ReactNode
 }
 
+type SpinnerTypes = {
+  height?: string
+}
+
 export {
   ChildrenTypes,
   SearchFormTypes,
@@ -39,4 +43,5 @@ export {
   HighlightsTypes,
   ForecastTypes,
   LinkTypes,
+  SpinnerTypes,
 }

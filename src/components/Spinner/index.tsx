@@ -1,7 +1,14 @@
 // Spinner
-const Spinner = () => {
+import { FC } from 'react'
+import { SpinnerTypes } from '@/types'
+
+const Spinner: FC<SpinnerTypes> = ({ height }) => {
   return (
-    <div className="flex min-h-[80vh] items-center justify-center">
+    <div
+      className={`flex ${
+        height === 'page' ? 'min-h-screen' : 'min-h-full'
+      }  items-center justify-center`}
+    >
       <div role="status">
         <svg
           className="mr-2 inline h-8 w-8 animate-spin fill-gray-600 text-gray-200 dark:fill-gray-300 dark:text-gray-600"

@@ -1,5 +1,6 @@
 // Dashboard
 import { useContext, useEffect, useState } from 'react'
+import { ServiceContext } from '@/context/ServiceContext'
 import { WeatherContext } from '@/context/WeatherContext'
 import useWeatherFetch from '@/hooks/useWeatherFetch'
 import useCoordinates from '@/hooks/useCoordinates'
@@ -17,13 +18,13 @@ import { styles } from '@/styles'
 
 const Dashboard = () => {
   const [isWeekMode, setWeekMode] = useState(false)
-  const { weather, bgImg, searchTerm, setSearchTerm, coords, error, setError } =
-    useContext(WeatherContext)
+  const { error, setError } = useContext(ServiceContext)
+  const { weather, bgImg, searchTerm, setSearchTerm, coords } = useContext(WeatherContext)
   const findCoordinates = useCoordinates()
   const [searchWeatherByWord, searchWeatherByCoords] = useWeatherFetch()
   const searchImgByWord = useImgFetch()
 
-  const fetchCoordinates = async () => {
+  const fetchCoordinates = () => {
     findCoordinates()
     searchWeatherByCoords(coords.lat, coords.lng)
     searchImgByWord(weather.name)
@@ -119,7 +120,7 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
-        <Spinner />
+        <Spinner height="page" />
       )}
     </>
   )
