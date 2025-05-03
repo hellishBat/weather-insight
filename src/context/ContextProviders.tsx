@@ -1,0 +1,25 @@
+// ContextProviders
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+import type { ChildrenProps } from '@/types'
+
+import { ThemeProvider } from './ThemeContext'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+})
+
+const ContextProviders = ({ children }: ChildrenProps) => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>{children}</ThemeProvider>
+    </QueryClientProvider>
+  )
+}
+
+export default ContextProviders

@@ -1,5 +1,5 @@
 {
-  "name": "vite-rts-tw-template",
+  "name": "weather-insight",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -32,7 +32,9 @@
     "prettier": "^3.4.2",
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "sass": "^1.83.0",
     "tailwindcss": "^3.4.17",
+    "tailwindcss-motion": "^1.0.1",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5",
@@ -44,8 +46,16 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.29.0",
+    "axios": "^1.6.8",
+    "caniuse-lite": "^1.0.30001610",
+    "i18n-iso-countries": "^7.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-super-seo": "^1.1.9"
+    "react-select-async-paginate": "^0.7.3",
+    "react-super-seo": "^1.1.9",
+    "react-world-flags": "^1.6.0",
+    "reseter.css": "^2.0.0",
+    "swiper": "^11.1.0"
   }
 }

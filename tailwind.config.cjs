@@ -16,9 +16,10 @@ module.exports = {
       },
     },
     extend: {
-      // fontFamily: {
-      //   raleway: ['Raleway', 'sans-serif'],
-      // },
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+      },
     },
   },
+  plugins: [require('tailwindcss-motion')],
 }

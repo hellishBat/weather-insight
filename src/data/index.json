@@ -1,0 +1,35 @@
+{
+  "highlights": {
+    "heading": "Today's Highlights",
+    "text": "As of",
+    "cards": [
+      { "label": "Cloudiness", "unit": "%" },
+      { "label": "Humidity", "unit": "%" },
+      { "label": "Wind Speed", "unit": "m/s" },
+      { "label": "Visibility", "unit": "km" },
+      { "label": "UV Index", "unit": "" },
+      { "label": "Pressure", "unit": "mb" }
+    ]
+  },
+  "forecast": {
+    "heading": "Detailed Forecast",
+    "buttons": ["Today", "Tomorrow", "Day After"]
+  },
+  "footer": {
+    "links": {
+      "owner": {
+        "href": "https://valentine-samoylov.vercel.app/",
+        "text": "Valentine Samoylov"
+      },
+      "weather": {
+        "href": "https://www.weatherapi.com/",
+        "text": "Weather API"
+      },
+      "unsplash": {
+        "href": "https://unsplash.com/",
+        "text": "Unsplash"
+      }
+    },
+    "text": ["Coded with", "by", "using", "and", "APIs"]
+  }
+}

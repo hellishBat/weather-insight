@@ -1,60 +1,115 @@
-# Vite⚡ React TS + Tailwind Template
+# WeatherInsight – A React Weather App
 
-This project is a template for setting up a modern web development environment using Vite, React, TypeScript, and Tailwind CSS. It includes a comprehensive setup for linting and formatting with ESLint, Stylelint, and Prettier.
+![WeatherInsight](https://imgur.com/a/ELxg13p)
 
-## Table of Contents
+## Features
 
-- [Getting Started](#getting-started)
-- [Available Scripts](#available-scripts)
-- [Configuration](#configuration)
+- 🌍 Weather search by location on page load or via the location button
+- 🔎 Search by city name with autofill (cities over 250,000 population)
+- 🖼️ Background image on the main weather card using a random Unsplash photo based on the location or weather description (e.g., "sunny", "cloudy")
+- 🌙 Dark Mode included
 
-## Getting Started
+## Technologies Used
 
-1. **Clone the repository:**
+- ⚛️ React + TypeScript
+- 🔁 [TanStack/React Query](https://www.npmjs.com/package/@tanstack/react-query) – asynchronous state management
+- 🌐 [Axios](https://www.npmjs.com/package/axios) – API fetching
+- 🎨 [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) – styling
+- 🔌 APIs:
+  - [Weather API](https://openweathermap.org/)
+  - [Unsplash](https://unsplash.com/developers/)
+  - [GeoDB Cities](https://rapidapi.com/wirefreethought/api/geodb-cities/)
+  - [IPWHOIS.io](https://ipwhois.io/)
 
-   ```sh
-   git clone <repository-url>
-   ```
+## Credits (In Order of Appearance)
 
-2. **Navigate to the project directory:**
+- 📦 Libraries:
+  - [React Select](https://www.npmjs.com/package/react-select)
+  - [React Select Async Paginate](https://www.npmjs.com/package/react-select-async-paginate)
+  - [Countries List](https://www.npmjs.com/package/countries-list)
+  - [React World Flags](https://www.npmjs.com/package/react-world-flags)
+  - [Swiper](https://www.npmjs.com/package/swiper)
+- 🎨 UI Icons: [Material Symbols by Google](https://fonts.google.com/icons)
+- 🌤 Forecast Icons: [Google Weather Icons](https://github.com/mrdarrengriffin/google-weather-icons)
+- 💙 Ukrainian Heart Icon by [Linector](https://www.iconfinder.com/LINECTOR)
 
-   ```sh
-   cd vite-rts-tw-template
-   ```
+## 🔗 Live Demo
 
-3. **Install dependencies:**
+[Live Demo](https://weatherinsight.vercel.app/)
 
-   ```sh
-   pnpm install
-   ```
+---
 
-4. **Start the development server:**
-   ```sh
-   pnpm run dev
-   ```
+## 🛠️ Local Usage
 
-## Available Scripts
+### Prerequisites
 
-- **`pnpm run dev`**: Starts the development server.
-- **`pnpm run build`**: Builds the project for production.
-- **`pnpm run preview`**: Previews the production build.
-- **`pnpm run lint:scripts`**: Lints and fixes JavaScript, JSX, TypeScript, and TSX files.
-- **`pnpm run lint:format`**: Formats code using Prettier.
+1. Clone this repository
+2. Obtain API keys from:
+   - [OWeather API](https://www.weatherapi.com/)
+   - [Unsplash](https://unsplash.com/developers/)
+3. Create a `.env` file in the root directory and add:
 
-## Configuration
+```env
+VITE_API_KEY_GEODB=your-api-key
+VITE_API_KEY_WEATHERAPI=your-api-key
+VITE_API_KEY_UNSPLASH=your-api-key
+```
+
+---
+
+## ⚡ Built With [Vite⚡ React TS + Tailwind Template](https://github.com/hellishBat/vite-rts-tw-template)
+
+### Highlights
+
+- ⚛️ React + TypeScript support
+- 🔥 React Fast Refresh (HMR) – dev mode
+- 🎨 Styling:
+  - Tailwind CSS
+  - SASS/SCSS
+  - PostCSS
+- 🗜️ Minified CSS/JS in production
+- 🖼️ Image optimization (WebP/AVIF) in production
+- ⭐ Inline SVG with SVGR
+- 🧰 ESLint, Stylelint, Prettier
+- ⚙️ `.env` support via Vite (`VITE_` prefix required)
+
+---
+
+## 📁 Project Setup
+
+### Getting Started
+
+```sh
+git clone <repository-url>
+cd vite-rts-tw-template
+pnpm install
+pnpm run dev
+```
+
+### Available Scripts
+
+- `pnpm run dev` – start dev server
+- `pnpm run build` – build for production
+- `pnpm run preview` – preview the production build
+- `pnpm run lint:scripts` – lint JS/TS/TSX files
+- `pnpm run lint:format` – format code with Prettier
+
+---
+
+## 🛠 Configuration Overview
 
 ### ESLint
 
-ESLint is configured to lint JavaScript, JSX, TypeScript, and TSX files, and it includes plugins for React, React Hooks, and accessibility (jsx-a11y).
+Configured for React, Hooks, accessibility, and TypeScript.
 
 ### Prettier
 
-Prettier is configured for code formatting and includes a plugin to sort imports.
+Includes plugin for import sorting.
 
 ### PostCSS
 
-PostCSS is configured to support Tailwind CSS, nesting rules, and autoprefixing.
+Supports Tailwind, nesting, and autoprefixing.
 
 ### TypeScript
 
-TypeScript is configured with a `tsconfig.json` file to manage the project's TypeScript settings.
+Managed via `tsconfig.json`.
