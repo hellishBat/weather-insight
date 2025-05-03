@@ -9,6 +9,10 @@ interface ChangeHandler {
   (fn: any): void
 }
 
+interface ChildrenProps {
+  children: ReactNode
+}
+
 // Libs-Related props
 interface SliderProps {
   children: ReactNode[]
@@ -78,6 +82,7 @@ interface LinkProps {
 }
 
 export {
+  ChildrenProps,
   SliderProps,
   SearchProps,
   SearchBarProps,
