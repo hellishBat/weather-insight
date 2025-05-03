@@ -1,6 +1,6 @@
 # WeatherInsight – A React Weather App
 
-![imgur](https://imgur.com/a/ELxg13p.png)
+![Imgur](https://imgur.com/39QeUFR.png)
 
 ## Features
 
