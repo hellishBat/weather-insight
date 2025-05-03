@@ -1,8 +1,8 @@
+import eslintPlugin from '@nabla/vite-plugin-eslint'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import { defineConfig } from 'vite'
 import { imagetools } from 'vite-imagetools'
-import eslint from 'vite-plugin-eslint'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import mkcert from 'vite-plugin-mkcert'
 import svgr from 'vite-plugin-svgr'
@@ -23,11 +23,16 @@ export default defineConfig({
     }),
     imagetools(),
     svgr(),
-    eslint({
-      cache: false,
-      include: ['src/**/*.tsx', 'src/**/*.ts'],
-      exclude: ['node_modules/**', 'dist/**'],
-      fix: true,
+    eslintPlugin({
+      eslintOptions: {
+        cache: false,
+        fix: true,
+      },
+      shouldLint: (path) =>
+        /\.(ts|tsx)$/.test(path) &&
+        path.includes('/src/') &&
+        !path.includes('/node_modules/') &&
+        !path.includes('/dist/'),
     }),
   ],
   optimizeDeps: {
