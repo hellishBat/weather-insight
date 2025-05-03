@@ -1,4 +1,8 @@
 // Loading
+import data from '@/data/index.json'
+
+const { text } = data?.loading || {}
+
 export const Loading = () => {
   return (
     <div className="flex items-center justify-center gap-2" role="status">
@@ -17,7 +21,7 @@ export const Loading = () => {
           fill="currentFill"
         />
       </svg>
-      <h2 className="text-3xl font-bold">Loading...</h2>
+      <h2 className="text-3xl font-bold">{text}</h2>
     </div>
   )
 }

@@ -2,8 +2,9 @@
 import { FreeMode, Keyboard, Mousewheel } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import '@/libs/slider.css'
 import type { SliderProps } from '@/types'
+
+import './slider.css'
 
 export const Slider: React.FC<SliderProps> = ({
   children,

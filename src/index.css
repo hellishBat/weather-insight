@@ -99,7 +99,7 @@
   }
 
   .section-head {
-    @apply pb-5 mb-6 flex flex-wrap items-end sm:mb-8 sm:pb-7 gap-2 border-b-[3px] border-gray-500/30 dark:border-gray-400/30 motion-preset-rebound-up motion-duration-1000;
+    @apply pb-5 mb-6 flex flex-wrap items-end sm:mb-8 sm:pb-7 gap-2 border-b-[3px] border-gray-500/30 dark:border-gray-400/30;
   }
 
   .section-heading {

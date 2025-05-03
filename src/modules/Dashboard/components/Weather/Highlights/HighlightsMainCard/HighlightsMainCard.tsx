@@ -29,21 +29,17 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
 
   return (
     <article
-      className="overlay-30 motion-preset-slide-up flex aspect-square w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-6 capitalize text-white shadow motion-duration-500 motion-delay-200 md:w-1/2 lg:w-4/12"
+      className="overlay-30 intersect:motion-preset-slide-up flex aspect-square w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-6 capitalize text-white shadow motion-duration-500 motion-delay-200 md:w-1/2 lg:w-4/12"
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className="flex flex-col gap-3">
-        <WeatherIcon
-          className="motion-preset-rebound-up text-7xl motion-duration-300 motion-delay-300"
-          icon={conditionCode}
-          isDay={is_day}
-        />
+        <WeatherIcon className="text-7xl" icon={conditionCode} isDay={is_day} />
 
-        <div className="motion-preset-rebound-up flex gap-2 motion-duration-300 motion-delay-300">
-          <span className="motion-preset-rebound-up relative inset-y-0 text-4xl motion-duration-300 motion-delay-500 after:absolute after:-right-2 after:h-full after:w-0.5 after:bg-white after:content-['']">
+        <div className="flex gap-2">
+          <span className="relative inset-y-0 text-4xl after:absolute after:-right-2 after:h-full after:w-0.5 after:bg-white after:content-['']">
             {`${temp_c.toFixed(0)}°C`}
           </span>
-          <ul className="motion-preset-rebound-right flex flex-col pl-2 text-sm motion-duration-300 motion-delay-500">
+          <ul className="flex flex-col pl-2 text-sm">
             <li>
               <span className="font-bold">{maxtemp_c?.toFixed(0)}</span>
               °C
@@ -55,9 +51,9 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
           </ul>
         </div>
 
-        <div className="motion-preset-rebound-up motion-duration-300 motion-delay-300">
+        <div>
           <h4 className="text-2xl font-semibold">{conditionText}</h4>
-          <ul className="motion-preset-rebound-up text-sm motion-duration-300 motion-delay-500">
+          <ul className="text-sm">
             {daily_chance_of_rain ? (
               <li className="font-semibold">
                 Possibility of rain {daily_chance_of_rain.toFixed(0)}%
@@ -75,7 +71,7 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
           </ul>
         </div>
 
-        <ul className="motion-preset-rebound-up text-sm capitalize motion-duration-300 motion-delay-700">
+        <ul className="text-sm capitalize">
           <li>
             Real Feel{' '}
             <span className="font-bold">{feelslike_c.toFixed(0)}</span>°C
@@ -84,14 +80,12 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
       </div>
 
       <div>
-        <h3 className="motion-preset-rebound-up text-2xl font-semibold motion-duration-300 motion-delay-500">
+        <h3 className="text-2xl font-semibold">
           {locationName}, {regionName}
         </h3>
-        <div className="motion-preset-rebound-down flex items-center gap-2 motion-duration-300 motion-delay-500">
+        <div className="flex items-center gap-2">
           <CountryFlag countryName={countryName} />
-          <span className="motion-preset-rebound-right motion-duration-300 motion-delay-700">
-            {countryName}
-          </span>
+          <span>{countryName}</span>
         </div>
       </div>
     </article>

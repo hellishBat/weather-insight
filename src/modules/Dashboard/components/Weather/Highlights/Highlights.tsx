@@ -71,7 +71,7 @@ export const Highlights = ({ data, img }: HighlightsProps) => {
 
   return (
     <section className="mb-12">
-      <div className="section-head">
+      <div className="section-head intersect:motion-preset-rebound-up motion-duration-1000">
         <h2 className="section-heading">{heading}</h2>
         <p className="text-xl font-semibold">
           {highlightsText} {formatDate(localtime)}

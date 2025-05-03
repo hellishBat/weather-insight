@@ -1,7 +1,7 @@
 // ForecastSlider
 import { Key } from 'react'
 
-import { Slider } from '@/libs/Slider'
+import { Slider } from '@/components/ui'
 import type { ForecastSliderProps } from '@/types'
 
 import { ForecastCard } from './'

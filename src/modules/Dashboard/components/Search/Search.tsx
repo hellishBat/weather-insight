@@ -14,8 +14,8 @@ export const Search = ({
   const [search, setSearch] = useState(null)
 
   const handleLocationClick = () => {
-    setSearch(null) // Clear input
-    locationSearchHandler() // Trigger geolocation
+    setSearch(null)
+    locationSearchHandler()
   }
 
   return (

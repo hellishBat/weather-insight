@@ -15,6 +15,12 @@
     "heading": "Detailed Forecast",
     "buttons": ["Today", "Tomorrow", "Day After"]
   },
+  "loading": {
+    "text": "Loading..."
+  },
+  "error": {
+    "text": "Unfortunately nothing was found, try entering the name of the city again."
+  },
   "footer": {
     "links": {
       "owner": {

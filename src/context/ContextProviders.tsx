@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import type { ChildrenProps } from '@/types'
 
+import { ObserverProvider } from './ObserverProvider'
 import { ThemeProvider } from './ThemeContext'
 
 const queryClient = new QueryClient({
@@ -17,7 +18,9 @@ const queryClient = new QueryClient({
 const ContextProviders = ({ children }: ChildrenProps) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>{children}</ThemeProvider>
+      <ObserverProvider>
+        <ThemeProvider>{children}</ThemeProvider>
+      </ObserverProvider>
     </QueryClientProvider>
   )
 }
