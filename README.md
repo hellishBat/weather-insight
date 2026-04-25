@@ -19,7 +19,7 @@
   - [Weather API](https://openweathermap.org/)
   - [Unsplash](https://unsplash.com/developers/)
   - [GeoDB Cities](https://rapidapi.com/wirefreethought/api/geodb-cities/)
-  - [IPWHOIS.io](https://ipwhois.io/)
+  - [GeoJS](https://get.geojs.io/)
 
 ## Credits (In Order of Appearance)
 
@@ -45,7 +45,7 @@
 
 1. Clone this repository
 2. Obtain API keys from:
-   - [OWeather API](https://www.weatherapi.com/)
+   - [Weather API](https://www.weatherapi.com/)
    - [Unsplash](https://unsplash.com/developers/)
 3. Create a `.env` file in the root directory and add:
 

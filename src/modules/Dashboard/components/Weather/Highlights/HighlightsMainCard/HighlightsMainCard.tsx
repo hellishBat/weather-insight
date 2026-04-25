@@ -29,7 +29,7 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
 
   return (
     <article
-      className="overlay-30 intersect:motion-preset-slide-up flex aspect-square w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-6 capitalize text-white shadow motion-duration-500 motion-delay-200 md:w-1/2 lg:w-4/12"
+      className="overlay-30 flex aspect-square w-full flex-col justify-between overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-6 capitalize text-white shadow motion-duration-500 motion-delay-200 intersect:motion-preset-slide-up md:w-1/2 lg:w-4/12"
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className="flex flex-col gap-3">

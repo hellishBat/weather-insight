@@ -11,7 +11,7 @@ export const ForecastCard = ({ data }: ForecastProps) => {
   } = data || {}
 
   return (
-    <article className="card intersect:motion-preset-rebound-left flex flex-col items-center gap-6 overflow-hidden p-4 text-center motion-duration-500 motion-delay-200">
+    <article className="card flex flex-col items-center gap-6 overflow-hidden p-4 text-center motion-duration-500 motion-delay-200 intersect:motion-preset-rebound-left">
       <div className="w-full border-b-2 border-gray-500/30 pb-4 dark:border-gray-400/30">
         <h3 className="text-2xl">{time.split(' ')[1]}</h3>
       </div>

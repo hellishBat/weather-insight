@@ -14,7 +14,7 @@ export const HighlightsCard = ({ data }: HighlightsProps) => {
     )
 
   return (
-    <article className="card intersect:motion-preset-pop flex flex-col items-center justify-center p-8 motion-duration-500 motion-delay-200 md:p-4">
+    <article className="card flex flex-col items-center justify-center p-8 motion-duration-500 motion-delay-200 intersect:motion-preset-pop md:p-4">
       <div className="flex gap-3 align-baseline">
         <figure className={`[&>*]:h-14 [&>*]:w-14 ${color}`}>{icon}</figure>
         <div>

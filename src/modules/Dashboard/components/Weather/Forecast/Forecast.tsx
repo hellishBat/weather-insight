@@ -15,7 +15,7 @@ export const Forecast = ({ data }: ForecastProps) => {
 
   return (
     <section>
-      <div className="section-head intersect:motion-preset-rebound-up motion-duration-1000">
+      <div className="section-head motion-duration-1000 intersect:motion-preset-rebound-up">
         <h2 className="section-heading">{heading}</h2>
         <div className="flex gap-2">
           {forecastDays.map((_: number[], index: number) => (
