@@ -60,7 +60,7 @@ const Dashboard = () => {
   return (
     <section
       id="dashboard"
-      className="bg-cover bg-center bg-no-repeat transition-all duration-700"
+      className="bg-cover bg-fixed bg-center bg-no-repeat transition-all duration-700"
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="min-h-screen bg-slate-200/[.70] pb-16 pt-36 backdrop-blur-lg dark:bg-gray-900/[.85]">

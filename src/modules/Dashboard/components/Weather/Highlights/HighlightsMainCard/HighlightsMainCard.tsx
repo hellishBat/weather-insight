@@ -28,9 +28,9 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
   } = data || {}
 
   return (
-    <div className='w-full border border-white/20 dark:border-white/10 shadow-md md:w-1/2 lg:w-4/12 overflow-hidden rounded-3xl motion-duration-500 motion-delay-200 intersect:motion-preset-slide-up'>
+    <div className='w-full border aspect-square border-white/20 dark:border-white/10 shadow-md md:w-1/2 lg:w-4/12 overflow-hidden rounded-3xl motion-duration-500 motion-delay-200 intersect:motion-preset-slide-up'>
       <article
-        className="relative overlay-30 flex aspect-square flex-col justify-between bg-cover bg-center bg-no-repeat p-6 capitalize text-white"
+        className="w-full h-full relative overlay-30 flex flex-col justify-between bg-cover bg-center bg-no-repeat p-6 capitalize text-white"
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="flex flex-col gap-3">

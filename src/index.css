@@ -151,7 +151,7 @@
   }
 
   .card {
-    @apply relative bg-white/10 dark:bg-gray-700/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-md rounded-3xl;
+    @apply relative bg-white/10 dark:bg-gray-700/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-md rounded-3xl overflow-hidden;
   }
 
   .card-label {
@@ -163,7 +163,7 @@
   }
 
   .glass-highlight {
-    @apply absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-30 pointer-events-none rounded-3xl;
+    @apply absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-30 pointer-events-none;
   }
 
   .glass-well {
