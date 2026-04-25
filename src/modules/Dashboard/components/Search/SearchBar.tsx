@@ -4,8 +4,6 @@ import { AsyncPaginate } from 'react-select-async-paginate'
 
 import { SearchBarProps } from '@/types'
 
-// import type { SearchBarProps } from '@/types'
-
 export const SearchBar = ({
   search,
   setSearch,
@@ -29,18 +27,22 @@ export const SearchBar = ({
       classNames={{
         container: () => 'w-full',
         control: (state) =>
-          `rounded-md border-none py-2 pl-9 pr-12 shadow-inner ${
-            state.isFocused
-              ? 'pl-[16px] bg-slate-300 dark:bg-slate-800 transition-all'
-              : 'bg-slate-300/70 dark:bg-slate-800/80'
-          }`,
-        indicatorsContainer: () => 'cursor-pointer',
-        placeholder: () => 'text-gray-400 dark:text-gray-500',
-        input: () => 'peer cursor-text',
+          `rounded-2xl py-3 pl-12 pr-14 transition-all duration-300
+          glass-well
+          ${state.isFocused ? 'bg-white/40 dark:bg-black/40 ring-2 ring-white/20 dark:ring-white/10' : ''}`,
+        indicatorsContainer: () => 'hidden cursor-pointer',
+        placeholder: () =>
+          'text-slate-500 dark:text-slate-400 tracking-wide',
+        input: () => 'text-slate-700 dark:text-white cursor-text',
+        singleValue: () => 'text-slate-700 dark:text-white font-semibold',
         menu: () =>
-          'py-2 rounded-md backdrop-blur-2xl bg-slate-200/70 shadow dark:bg-gray-800/70 translate-y-2',
+          'cursor-pointer overflow-hidden absolute w-full z-50 py-4 mt-3 rounded-2xl bg-white/40 dark:bg-slate-700/80 backdrop-blur-2xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]',
         option: (state) =>
-          `py-2 px-4 ${state.isFocused && 'bg-slate-900/10 dark:bg-white/10'}`,
+          `py-2 px-5  transition-[colors, font-weight] duration-300 cursor-pointer ${
+            state.isFocused
+              ? 'bg-slate-500/10 font-semibold dark:bg-slate-400/10 text-slate-700 dark:text-white backdrop-blur-3xl'
+              : 'text-slate-500 dark:text-slate-400'
+          }`,
       }}
     />
   )

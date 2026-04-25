@@ -11,16 +11,23 @@ export const ForecastCard = ({ data }: ForecastProps) => {
   } = data || {}
 
   return (
-    <article className="card flex flex-col items-center gap-6 overflow-hidden p-4 text-center motion-duration-500 motion-delay-200 intersect:motion-preset-rebound-left">
-      <div className="w-full border-b-2 border-gray-500/30 pb-4 dark:border-gray-400/30">
-        <h3 className="text-2xl">{time.split(' ')[1]}</h3>
+    <article className="card flex flex-col items-center gap-6 p-4 text-center motion-duration-500 motion-delay-200 intersect:motion-preset-rebound-left">
+      <div className="glass-highlight" />
+      <div className="w-full border-b-2 border-slate-500/10 pb-4 dark:border-slate-400/10">
+        <h3 className="text-2xl">{time ? time.split(' ')[1] : '--:--'}</h3>
       </div>
-      <div className="flex h-24 w-24 items-center justify-center rounded-full bg-slate-300 shadow-inner dark:bg-slate-800">
-        <WeatherIcon className="text-6xl" icon={conditionCode} isDay={is_day} />
+      <div className="glass-well relative z-10 flex h-24 w-24 items-center justify-center rounded-full">
+        <WeatherIcon
+          className="text-6xl drop-shadow-md"
+          icon={conditionCode}
+          isDay={is_day}
+        />
       </div>
-      <p className="flex flex-col justify-between">
-        <span className="card-label-sm mb-2 line-clamp-1">{conditionText}</span>
-        <span className="card-highlighted-text text-3xl font-semibold">{`${temp_c.toFixed(0)}°C`}</span>
+      <p className="relative z-10 flex w-full flex-col justify-between">
+        <span className="card-label mb-2 line-clamp-1">{conditionText}</span>
+        <span className="card-highlighted-text">
+          {temp_c !== undefined ? `${temp_c.toFixed(0)}°C` : 'N/A'}
+        </span>
       </p>
     </article>
   )

@@ -8,14 +8,14 @@ export const Header = () => {
 
   return (
     <header
-      className={`layout fixed left-0 top-0 z-50 w-full py-4 shadow transition-[transform,opacity] duration-500 ${
+      className={`layout fixed left-0 top-0 z-50 w-full border-b py-4 shadow-sm transition-[opacity,transform] duration-500 ${
         scrollDirection === 'down'
-          ? '-translate-y-full opacity-5'
+          ? '-translate-y-full opacity-0'
           : 'translate-y-0 opacity-100'
       }`}
     >
       <div className="container">
-        <div className="flex items-center">
+        <div className="flex items-center justify-between">
           <Logo />
           <ThemeSwitch />
         </div>

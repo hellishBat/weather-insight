@@ -1,16 +1,16 @@
 // ForecastButton
 import type { ForecastButtonProps } from '@/types'
 
-export const ForecastButton: React.FC<ForecastButtonProps> = ({
+export const ForecastButton = ({
   isSelected,
   onClick,
   label,
-}) => {
+}: ForecastButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`button-base button-hover ${
-        isSelected ? `button-selected` : ''
+      className={`button-base ${
+        isSelected ? 'button-selected' : 'button-hover'
       }`}
     >
       {label}

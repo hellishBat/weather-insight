@@ -15,9 +15,9 @@ export const Forecast = ({ data }: ForecastProps) => {
 
   return (
     <section>
-      <div className="section-head motion-duration-1000 intersect:motion-preset-rebound-up">
+      <div className="section-head">
         <h2 className="section-heading">{heading}</h2>
-        <div className="flex gap-2">
+        <div className="button-group">
           {forecastDays.map((_: number[], index: number) => (
             <ForecastButton
               key={index}
@@ -28,7 +28,6 @@ export const Forecast = ({ data }: ForecastProps) => {
           ))}
         </div>
       </div>
-
       <ForecastSlider data={forecastCardsContent} />
     </section>
   )

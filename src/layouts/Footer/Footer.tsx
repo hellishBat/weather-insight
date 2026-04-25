@@ -22,12 +22,11 @@ const { links, text } = data.footer as FooterData
 
 export const Footer = () => {
   return (
-    <footer className="layout py-8 text-xs">
+    <footer className="layout w-full border-t py-6 text-xs font-medium tracking-wide">
       <div className="container">
-        <div className="flex flex-wrap items-center justify-center gap-1">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 drop-shadow-sm">
           {text[0]}
-          <HeartIcon className="h-5 w-5" />{' '}
-          {/* Adjusted to Tailwind's em = 1.25em */}
+          <HeartIcon className="h-4 w-4 drop-shadow-sm" />
           {text[1]}
           <Link href={links.owner.href}>{links.owner.text}</Link>
           {text[2]}

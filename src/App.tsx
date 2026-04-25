@@ -33,7 +33,7 @@ const App = () => {
       </SuperSEO>
       <ContextProviders>
         <Header />
-        <main className="flex-1 bg-slate-100 text-gray-500 dark:bg-gray-900 dark:text-gray-400">
+        <main className="">
           <Dashboard />
         </main>
         <Footer />

@@ -6,20 +6,27 @@ export const HighlightsCard = ({ data }: HighlightsProps) => {
   const displayValue =
     value !== undefined && !isNaN(value) ? (
       <>
-        <span className="text-3xl font-semibold">{value}</span>
-        <span>{unit}</span>
+        <span className="card-highlighted-text">
+          {value}
+        </span>
+        <span className="ml-1 text-lg font-medium text-slate-700 dark:text-slate-300">
+          {unit}
+        </span>
       </>
     ) : (
-      <span className="text-3xl font-semibold">N/A</span>
+      <span className="text-3xl font-semibold opacity-60">N/A</span>
     )
 
   return (
-    <article className="card flex flex-col items-center justify-center p-8 motion-duration-500 motion-delay-200 intersect:motion-preset-pop md:p-4">
-      <div className="flex gap-3 align-baseline">
-        <figure className={`[&>*]:h-14 [&>*]:w-14 ${color}`}>{icon}</figure>
-        <div>
-          <h3 className="card-label-sm">{label}</h3>
-          <div className="card-highlighted-text flex items-baseline">
+    <article className="card flex flex-col items-center justify-center p-8 motion-duration-500 motion-delay-200 intersect:motion-preset-pop md:p-6">
+      <div className="glass-highlight" />
+      <div className="relative z-10 flex items-center gap-4">
+        <figure className={`drop-shadow-md [&>*]:h-14 [&>*]:w-14 ${color}`}>
+          {icon}
+        </figure>
+        <div className="flex flex-col">
+          <h3 className="card-label mb-1">{label}</h3>
+          <div className="card-highlighted-text flex items-baseline drop-shadow-sm">
             {displayValue}
           </div>
         </div>
