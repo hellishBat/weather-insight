@@ -95,19 +95,19 @@
 /* Component layer: Reusable component styles */
 @layer components {
   .layout {
-    @apply  bg-white dark:bg-gray-700 backdrop-blur-2xl text-gray-500 dark:text-gray-400 border-white/20 dark:border-white/10;
+    @apply bg-white dark:bg-gray-700 backdrop-blur-2xl text-gray-500 dark:text-gray-400 border-white/20 dark:border-white/10;
   }
 
   .section-head {
     @apply relative pb-5 mb-6 flex flex-wrap items-end sm:mb-8 sm:pb-7 gap-2 
            border-b border-slate-500/10 dark:border-slate-400/10;
-    overflow: visible; 
+    overflow: visible;
   }
 
   .section-head::after {
     content: '';
     @apply absolute bottom-0 left-0 w-full h-px pointer-events-none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 
   .dark .section-head::after {
@@ -116,30 +116,31 @@
 
   .section-heading {
     @apply mr-auto text-3xl font-bold tracking-tight text-slate-700 dark:text-white;
-    
-    text-shadow: 
+
+    text-shadow:
       0 2px 4px rgba(0, 0, 0, 0.05),
       0 10px 20px rgba(0, 0, 0, 0.08);
   }
- 
- .button-group {
+
+  .button-group {
     @apply flex p-1 gap-1 glass-well !rounded-2xl w-fit;
   }
 
   .button-base {
     @apply relative overflow-hidden rounded-xl px-5 py-2 font-semibold tracking-wide 
            transition-all duration-300 ease-in-out border border-transparent
-           text-slate-500 dark:text-gray-400; 
+           text-slate-500 dark:text-gray-400;
   }
 
   .button-hover {
     @apply md:hover:text-slate-700 md:dark:hover:text-slate-200;
   }
 
-  .button-selected, .button-icon {
+  .button-selected,
+  .button-icon {
     @apply bg-white/30 dark:bg-gray-800/40 border-white/10 shadow-sm
            text-slate-700 dark:text-white;
-    
+
     &::before {
       @apply absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-100 content-[''];
     }
@@ -147,11 +148,11 @@
 
   .button-icon {
     @apply relative overflow-hidden rounded-xl p-2
-           transition-all duration-300 ease-in-out border 
+           transition-all duration-300 ease-in-out border;
   }
 
   .card {
-    @apply relative bg-white/10 dark:bg-gray-700/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-md rounded-3xl overflow-hidden;
+    @apply relative bg-white/10 dark:bg-gray-700/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-md rounded-2xl overflow-hidden;
   }
 
   .card-label {

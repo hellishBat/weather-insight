@@ -6,9 +6,7 @@ export const HighlightsCard = ({ data }: HighlightsProps) => {
   const displayValue =
     value !== undefined && !isNaN(value) ? (
       <>
-        <span className="card-highlighted-text">
-          {value}
-        </span>
+        <span className="card-highlighted-text">{value}</span>
         <span className="ml-1 text-lg font-medium text-slate-700 dark:text-slate-300">
           {unit}
         </span>
@@ -18,7 +16,7 @@ export const HighlightsCard = ({ data }: HighlightsProps) => {
     )
 
   return (
-    <article className="card flex flex-col items-center justify-center p-8 motion-duration-500 motion-delay-200 intersect:motion-preset-pop md:p-6">
+    <article className="card flex flex-col items-center justify-center p-6 motion-duration-500 motion-delay-200 intersect:motion-preset-pop sm:p-8 md:p-6">
       <div className="glass-highlight" />
       <div className="relative z-10 flex items-center gap-4">
         <figure className={`drop-shadow-md [&>*]:h-14 [&>*]:w-14 ${color}`}>

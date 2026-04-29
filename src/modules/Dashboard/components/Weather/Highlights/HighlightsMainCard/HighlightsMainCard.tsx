@@ -28,14 +28,18 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
   } = data || {}
 
   return (
-    <div className='w-full border aspect-square border-white/20 dark:border-white/10 shadow-md md:w-1/2 lg:w-4/12 overflow-hidden rounded-3xl motion-duration-500 motion-delay-200 intersect:motion-preset-slide-up'>
+    <div className="aspect-square w-full overflow-hidden rounded-2xl border border-white/20 shadow-md motion-duration-500 motion-delay-200 intersect:motion-preset-slide-up dark:border-white/10 md:w-1/2 lg:w-4/12">
       <article
-        className="w-full h-full relative overlay-30 flex flex-col justify-between bg-cover bg-center bg-no-repeat p-6 capitalize text-white"
+        className="overlay-30 relative flex h-full w-full flex-col justify-between bg-cover bg-center bg-no-repeat p-6 capitalize text-white"
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="flex flex-col gap-3">
-          <WeatherIcon className="text-7xl drop-shadow-xl" icon={conditionCode} isDay={is_day} />
-  
+          <WeatherIcon
+            className="text-7xl drop-shadow-xl"
+            icon={conditionCode}
+            isDay={is_day}
+          />
+
           <div className="flex gap-2">
             <span className="relative inset-y-0 text-4xl drop-shadow-md after:absolute after:-right-2 after:h-full after:w-0.5 after:bg-white after:content-['']">
               {`${temp_c.toFixed(0)}°C`}
@@ -51,9 +55,11 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
               </li>
             </ul>
           </div>
-  
+
           <div>
-            <h4 className="text-2xl font-semibold drop-shadow-md">{conditionText}</h4>
+            <h4 className="text-2xl font-semibold drop-shadow-md">
+              {conditionText}
+            </h4>
             <ul className="text-sm drop-shadow-sm">
               {daily_chance_of_rain ? (
                 <li className="font-semibold">
@@ -71,7 +77,7 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
               )}
             </ul>
           </div>
-  
+
           <ul className="text-sm capitalize drop-shadow-sm">
             <li>
               Real Feel{' '}
@@ -79,7 +85,7 @@ export const HighlightsMainCard = ({ data, img }: HighlightsProps) => {
             </li>
           </ul>
         </div>
-  
+
         <div>
           <h3 className="text-2xl font-semibold drop-shadow-md">
             {locationName}, {regionName}

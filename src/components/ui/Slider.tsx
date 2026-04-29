@@ -9,18 +9,17 @@ import './slider.css'
 export const Slider: React.FC<SliderProps> = ({
   children,
   className = '',
-  spaceBetween = 24,
-  slidesPerView = 2,
+  spaceBetween = 16,
+  slidesPerView = 5,
   breakpoints = {
-    640: { slidesPerView: 4 },
-    768: { slidesPerView: 5 },
-    1024: { slidesPerView: 6 },
-    1280: { slidesPerView: 7 },
+    640: { slidesPerView: 7 },
+    768: { slidesPerView: 9 },
+    1024: { slidesPerView: 12 },
   },
 }) => {
   return (
     <Swiper
-      className={`-my-2 ${className}`}
+      className={`${className}`}
       slidesPerView={slidesPerView}
       spaceBetween={spaceBetween}
       freeMode
@@ -29,11 +28,13 @@ export const Slider: React.FC<SliderProps> = ({
       modules={[FreeMode, Keyboard, Mousewheel]}
       breakpoints={breakpoints}
     >
-      {children.map((child, idx) => (
-        <SwiperSlide key={idx} className="py-2">
-          {child}
-        </SwiperSlide>
-      ))}
+      <div>
+        {children.map((child, idx) => (
+          <SwiperSlide key={idx} className="">
+            {child}
+          </SwiperSlide>
+        ))}
+      </div>
     </Swiper>
   )
 }

@@ -52,6 +52,7 @@ interface WeatherIconProps {
   icon: number
   isDay: boolean
   className?: string
+  title?: string
 }
 
 interface HighlightsProps {

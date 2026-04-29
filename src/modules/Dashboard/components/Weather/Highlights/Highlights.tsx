@@ -77,9 +77,9 @@ export const Highlights = ({ data, img }: HighlightsProps) => {
           {highlightsText} {formatDate(localtime)}
         </p>
       </div>
-      <div className="flex flex-wrap gap-6 md:flex-nowrap lg:gap-8">
+      <div className="flex flex-wrap gap-4 sm:gap-6 md:flex-nowrap lg:gap-8">
         <HighlightsMainCard data={data} img={img} />
-        <div className="grid w-full auto-cols-fr auto-rows-fr gap-6 sm:grid-cols-2 lg:w-2/3 lg:grid-cols-3 lg:gap-8">
+        <div className="grid w-full auto-cols-fr auto-rows-fr grid-cols-2 gap-4 sm:gap-6 lg:w-2/3 lg:grid-cols-3 lg:gap-8">
           {highlightsCardsData.map((cardData, idx) => (
             <HighlightsCard data={cardData} key={idx} />
           ))}

@@ -132,6 +132,7 @@ export const WeatherIcon: React.FC<WeatherIconProps> = ({
   icon,
   className,
   isDay,
+  title,
 }) => {
   const IconComponent = isDay ? dayIconMap[icon] : nightIconMap[icon]
 
@@ -142,6 +143,7 @@ export const WeatherIcon: React.FC<WeatherIconProps> = ({
   return (
     <div className={className}>
       <IconComponent />
+      {title ? <span className="sr-only">{title}</span> : null}
     </div>
   )
 }
